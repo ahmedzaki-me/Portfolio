@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", ui-sans-serif, system-ui;
+  --color-main: #7e57c2;
+  --color-main-alt: #3b1e84;
+  --color-header: #000000db;
+  --color-bg: #1a1a1b;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-sideBG: #fff;
+  --color-pBG: #0000009f;
+  --color-card-bg: #252526;
+  --spacing-section: 8rem;
+  --spacing-section-mobile: 3rem;
+}
+.light {
+  --color-main: #7e57c2;
+  --color-header: #d8d8d8dc;
+  --color-bg: #ffffff;
+  --color-text: #222;
+  --color-sideBG: #3f3f3f;
+  --color-pBG: #ffffff9f;
+  --color-card-bg: #e2d7f8;
+}
+@custom-variant light (&:where(.light, .light *));
+.light * p {
+  transition: 0.3s;
+  color: #555;
+  font-weight: 500;
+}
+.light * p:hover {
+  color: #333;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* font-family: var(--font-sans); */
+  }
+  body {
+    @apply relative p-0 m-0 bg-bg;
+  }
+  body::before {
+    content: "";
+    background-image: url("/WhatsAppImage.jpeg");
+    @apply absolute bg-no-repeat bg-center bg-cover inset-0 -z-101 blur-xs;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+div {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+div:focus {
+  outline: none;
+}
+ul {
+  list-style: none;
+}
+p {
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+::selection {
+  background-color: var(--color-main-alt);
+  color: var(--color-white);
+}
+@layer components {
+  .container {
+    @apply mx-auto p-4 lg:p-8;
+  }
+  .header {
+    @apply lg:items-center mx-auto px-2 z-10 lg:w-127 w-69.5 h-14 flex justify-between py-2 gap-10 bg-header text-text rounded-4xl fixed top-3 left-1/2 -translate-x-1/2  transition-all duration-300 ease-in-out;
+  }
+  .nav-link {
+    @apply hover:text-main duration-300 cursor-pointer font-medium;
+  }
+
+  .btn-contact {
+    @apply relative overflow-hidden cursor-pointer px-8 py-3 rounded-4xl bg-sideBG text-header duration-300 hover:text-white font-medium;
+
+    &::before {
+      @apply content-[''] absolute bottom-0 left-0 w-full h-0 bg-main z-1 rounded-4xl transition-all duration-300 ease-in-out;
+    }
+
+    &:hover::before {
+      @apply h-full;
+    }
+  }
+  .nav-bar {
+    @apply p-2 text-[22px] bg-main rounded-full cursor-pointer text-text;
+  }
+}

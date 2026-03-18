@@ -1,0 +1,287 @@
+[
+  {
+    "id": "zaki-dashboard",
+    "slug": "zaki-dashboard-restaurant-management",
+    "media": {
+      "videoLg_url": "Ved/zaki-dashboard-lg.mp4",
+      "videoSm_url": "Ved/zaki-dashboard-sm.mp4",
+      "thumbnail": "images/zaki-dashboard-hero.png"
+    },
+    "tags": ["React", "Supabase", "RBAC", "Dashboard"],
+    "tech_stack": {
+      "frontend": [
+        "React 19 (Vite 7)",
+        "Tailwind CSS 4",
+        "Shadcn UI",
+        "Radix UI",
+        "Recharts"
+      ],
+      "logic": [
+        "React Router 7",
+        "TanStack Query (React Query)",
+        "React Hook Form",
+        "Zod",
+        "Next-themes",
+        "Browser-image-compression",
+        "React Dropzone"
+      ],
+      "backend_admin": [
+        "Supabase (Auth, PostgreSQL, Realtime)",
+        "Supabase Edge Functions",
+        "OneSignal",
+        "Sonner"
+      ],
+      "hosting": "Vercel"
+    },
+    "links": {
+      "live_demo": "https://zaki-dashboard.vercel.app",
+      "source_code": "https://github.com/ahmedzaki-me/Zaki-Dashboard"
+    },
+    "content": {
+      "en": {
+        "title": "Zaki Dashboard",
+        "short_description": "An enterprise-grade restaurant management dashboard with real-time sync, role-based access control, and advanced analytics.",
+        "full_description": "A comprehensive administrative solution built for restaurant and business operations. The dashboard provides full control over menus, orders, employees, and sales analytics — all in real-time. It features a strict RBAC system with three distinct roles (Owner, Admin, Cashier), a customizable theming engine, and push notification support, designed to be adaptable for any business that needs to manage and track its operations.",
+        "demo_credentials": {
+          "note": "Try the live demo using one of these accounts (Password: Ahmed#):",
+          "accounts": [
+            { "role": "Owner", "email": "ahmedzaki.developer@gmail.com" },
+            { "role": "Admin", "email": "admin1@ahmedzaki.me" },
+            { "role": "Cashier", "email": "cashier1@ahmedzaki.me" }
+          ]
+        },
+        "challenges": [
+          {
+            "title": "Role-Based Access Control (RBAC)",
+            "problem": "Implementing a secure, granular permission system where each role (Owner, Admin, Cashier) has strictly different access — not just on the UI level but enforced at the database level.",
+            "solution": "Combined React Router route guards for client-side protection with Supabase RLS (Row Level Security) policies and SECURITY DEFINER trigger functions to enforce permissions at the database level, eliminating any possibility of unauthorized data access."
+          },
+          {
+            "title": "Data Integrity Across Order History",
+            "problem": "Menu items and categories can be deleted or modified at any time, which would corrupt historical order records that reference them — causing broken invoices and inaccurate analytics.",
+            "solution": "Adopted a snapshot/denormalization pattern for order_items, storing the item's name, image, and description at the moment of order creation. This decouples order history from live menu data, ensuring records remain accurate regardless of future changes."
+          },
+          {
+            "title": "Optimized Data Fetching Architecture",
+            "problem": "Balancing fast initial page loads with keeping data fresh and consistent across multiple views — especially for real-time order updates.",
+            "solution": "Implemented a hybrid pattern using React Router loaders with ensureQueryData for pre-fetching on navigation, combined with useQuery in components for background updates and invalidateQueries after mutations. Query keys include the user's access token to prevent stale cache across role switches or sessions."
+          }
+        ],
+        "features": [
+          "Role-Based Access Control with three distinct roles: Owner, Admin, and Cashier.",
+          "Real-time order tracking powered by Supabase Realtime — no manual refresh needed.",
+          "Advanced order filtering by date range, employee, order status, and payment method.",
+          "Enterprise push notifications via OneSignal with in-dashboard toggle control.",
+          "Sales analytics and monthly performance metrics with data visualization via Recharts.",
+          "Customizable theming engine with Light, Dark, and System modes plus multiple color schemes.",
+          "Employee management supporting up to 200 users with configurable permissions.",
+          "Image compression for efficient menu asset management."
+        ]
+      },
+      "ar": {
+        "title": "Zaki Dashboard",
+        "short_description": "لوحة تحكم احترافية لإدارة المطاعم والأعمال التجارية بالوقت الفعلي، مع نظام صلاحيات متكامل وتحليلات متقدمة.",
+        "full_description": "نظام إداري متكامل وعالي الأداء، مُصمم لإحداث نقلة نوعية في كفاءة العمليات التشغيلية للمطاعم والشركات. يوفر النظام تحكمًا مركزيًّا فائق الدقة في القوائم، الطلبات، وإدارة الموارد البشرية، مع دعم كامل للبيانات اللحظية (Real-time). يتميز بـ 'معمارية أمنية' صارمة تعتمد على توزيع الأدوار (RBAC)، مما يضمن خصوصية البيانات وسلاسة سير العمل في البيئات الاحترافية",
+
+        "demo_credentials": {
+          "note": "جرّب الديمو باستخدام أحد هذه الحسابات (كلمة المرور: Ahmed#):",
+          "accounts": [
+            { "role": "المالك", "email": "ahmedzaki.developer@gmail.com" },
+            { "role": "المسؤول", "email": "admin1@ahmedzaki.me" },
+            { "role": "أمين الخزانة", "email": "cashier1@ahmedzaki.me" }
+          ]
+        },
+        "challenges": [
+          {
+            "title": "نظام الصلاحيات (RBAC)",
+            "problem": "تطبيق نظام صلاحيات دقيق ومحكم يمنح كل دور (المالك، المسؤول، أمين الخزانة) وصولًا مختلفًا تمامًا — ليس فقط على مستوى الواجهة، بل مفروضًا على مستوى قاعدة البيانات أيضًا.",
+            "solution": "جمع بين Route Guards في React Router لحماية الواجهة، وسياسات RLS في Supabase مع دوال SECURITY DEFINER لتطبيق الصلاحيات على مستوى قاعدة البيانات، مما يلغي أي إمكانية للوصول غير المصرح به للبيانات."
+          },
+          {
+            "title": "سلامة بيانات سجل الطلبات",
+            "problem": "عناصر القائمة والأصناف يمكن حذفها أو تعديلها في أي وقت، مما قد يُفسد سجلات الطلبات القديمة التي تشير إليها — وبالتالي يؤدي إلى فواتير معطوبة وتحليلات غير دقيقة.",
+            "solution": "هندسة نظام أرشفة لحظي (Data Snapshotting Architecture)، حيث يُحفظ اسم المنتج وصورته ووصفه لحظة إنشاء الطلب. يفصل هذا النهج سجل الطلبات عن بيانات القائمة الحية، مما يضمن دقة السجلات بغض النظر عن أي تغييرات مستقبلية."
+          },
+          {
+            "title": "معمارية جلب البيانات المحسّنة",
+            "problem": "تحقيق توازن بين سرعة التحميل الأولي للصفحات والحفاظ على البيانات محدّثة ومتسقة عبر العروض المختلفة — خاصةً لتحديثات الطلبات الفورية.",
+            "solution": "تطبيق نمط هجين يستخدم React Router Loaders مع ensureQueryData للـ pre-fetching عند التنقل، مع useQuery في المكونات للتحديث في الخلفية، وinvalidateQueries بعد عمليات التعديل. تتضمن مفاتيح الـ Query الـ access token الخاص بالمستخدم لمنع تسرب الكاش القديم عند تبديل الأدوار أو الجلسات."
+          }
+        ],
+        "features": [
+          "نظام صلاحيات متكامل بثلاثة أدوار مختلفة: أونر، المسؤول، وأمين الخزانة.",
+          "تتبع الطلبات في الوقت الفعلي عبر Supabase Realtime — دون الحاجة لإعادة تحميل الصفحة.",
+          "فلترة متقدمة للطلبات حسب الوقت، الموظف، حالة الطلب، وطريقة الدفع.",
+          "إشعارات فورية عبر OneSignal مع تحكم في الاشتراك مباشرة من لوحة التحكم.",
+          "تحليلات مبيعات وإحصائيات أداء شهرية مع تصوير بياني عبر Recharts.",
+          "محرك تخصيص مرئي يدعم الوضع الفاتح والداكن وإعدادات النظام مع ألوان متعددة.",
+          "إدارة الموظفين بسعة تصل إلى 200 مستخدم مع صلاحيات قابلة للتخصيص.",
+          "ضغط الصور تلقائيًا لإدارة فعّالة لملفات الوسائط."
+        ]
+      }
+    }
+  },
+  {
+    "id": "lo2ma-eskndrany",
+    "slug": "lo2ma-eskndrany-ecommerce",
+    "media": {
+      "videoLg_url": "Ved/lg.mp4",
+      "videoSm_url": "Ved/sm.mp4",
+      "thumbnail": "images/lo2ma-hero.jpg"
+    },
+    "tags": ["React", "AppSheet", "E-commerce"],
+    "tech_stack": {
+      "frontend": [
+        "React (Vite)",
+        "Tailwind CSS (Plan to migrate)",
+        "Native CSS"
+      ],
+      "logic": ["React Hooks", "Axios"],
+      "backend_admin": ["AppSheet", "Google Sheets"],
+      "hosting": "Vercel"
+    },
+    "links": {
+      "live_demo": "https://lo2ma-eskndrany.vercel.app/",
+      "source_code": "https://github.com/ahmedzaki-me/lo2ma_eskndrany_With_React"
+    },
+    "content": {
+      "en": {
+        "title": "Loqma Eskndrany",
+        "short_description": "Loqma Eskndrany E-Commerce Website",
+        "full_description": "A specialized e-commerce solution developed for 'Lo2ma Eskndrany' restaurant. The project focuses on delivering a seamless user experience while providing a flexible, no-code administrative dashboard for real-time menu and price management.",
+        "challenges": [
+          {
+            "title": "Migration & Scalability",
+            "problem": "Transitioning a legacy HTML/CSS/JS site to React while maintaining design integrity and boosting performance.",
+            "solution": "Refactored the codebase into reusable functional components and structured CSS to ensure a smooth future migration to UI libraries like Tailwind CSS."
+          },
+          {
+            "title": "No-Backend Data Management",
+            "problem": "The client required full control over menu items and pricing without needing technical intervention.",
+            "solution": "Integrated AppSheet with Google Sheets as a cloud-based CMS. This allowed the client to update content instantly via a mobile interface, with changes reflecting on the site in real-time."
+          },
+          {
+            "title": "Streamlined Order Dispatch",
+            "problem": "Implementing a reliable ordering system without a dedicated backend server or database.",
+            "solution": "Leveraged the WhatsApp pre-filled message feature. By iterating through the cart state, the system generates a formatted invoice sent directly to the restaurant's WhatsApp, improving communication efficiency."
+          }
+        ],
+        "features": [
+          "Dynamic CMS via Google Sheets and AppSheet.",
+          "Fully functional client-side Cart System.",
+          "Automated order formatting and WhatsApp integration.",
+          "High-performance, responsive UI optimized for mobile users."
+        ]
+      },
+      "ar": {
+        "title": "لقمة اسكندراني",
+        "short_description": "متجر إلكتروني لمطعم لقمة اسكندراني",
+        "full_description": "متجر إلكتروني متخصص تم تطويره لمطعم 'لقمة اسكندراني'. يركز المشروع على تقديم تجربة مستخدم سلسة مع توفير لوحة تحكم إدارية مرنة لإدارة القائمة والأسعار في الوقت الفعلي.",
+        "challenges": [
+          {
+            "title": "الهجرة وقابلية التوسع",
+            "problem": "تحويل موقع قديم مبني بـ HTML/CSS/JS إلى React مع الحفاظ على سلامة التصميم وتعزيز الأداء.",
+            "solution": "إعادة هيكلة الكود المصدري إلى مكونات وظيفية قابلة لإعادة الاستخدام وتنظيم ملفات CSS لضمان انتقال سلس مستقبلًا لمكتبات واجهة المستخدم مثل Tailwind CSS."
+          },
+          {
+            "title": "إدارة البيانات بدون خلفية برمجية",
+            "problem": "طلب العميل تحكمًا كاملًا في عناصر القائمة والأسعار دون الحاجة لتدخل تقني.",
+            "solution": "دمج AppSheet مع Google Sheets كـ CMS سحابي. أتاح ذلك للعميل تحديث المحتوى فورًا عبر واجهة موبايل، مع انعكاس التغييرات على الموقع في الوقت الفعلي."
+          },
+          {
+            "title": "تبسيط إرسال الطلبات",
+            "problem": "تنفيذ نظام طلبات موثوق بدون خادم خلفي (Backend) أو قاعدة بيانات مخصصة.",
+            "solution": "الاستفادة من ميزة رسائل واتساب مسبقة التعبئة. من خلال معالجة حالة عربة التسوق، يقوم النظام بإنشاء فاتورة منسقة تُرسل مباشرة إلى واتساب المطعم، مما يحسن كفاءة التواصل."
+          }
+        ],
+        "features": [
+          "نظام إدارة محتوى ديناميكي عبر Google Sheets و AppSheet.",
+          "نظام عربة تسوق متكامل يعمل بالكامل على جانب العميل (client-side).",
+          "تنسيق تلقائي للطلبات وتكامل مباشر مع واتساب.",
+          "واجهة مستخدم عالية الأداء ومتجاوبة ومحسنة لمستخدمي الهاتف."
+        ]
+      }
+    }
+  },
+  {
+    "id": "personal-portfolio",
+    "slug": "ahmed-zaki-professional-portfolio",
+    "media": {
+      "videoLg_url": "Ved/portfolio-lg.mp4",
+      "videoSm_url": "Ved/portfolio-sm.mp4",
+      "thumbnail": "images/portfolio-hero.jpg"
+    },
+    "tags": ["React", "Tailwind CSS", "i18next", "Analytics"],
+    "tech_stack": {
+      "frontend": ["React (Vite)", "Tailwind CSS (Dark/Light Mode)"],
+      "logic": ["React Hooks", "Custom Hooks", "i18next", "React Router"],
+      "backend_admin": ["Dynamic JSON Data", "EmailJS"],
+      "analytics": ["React-GA4 (Google Analytics)"],
+      "hosting": "Vercel"
+    },
+    "links": {
+      "live_demo": "https://ahmedzaki.me",
+      "source_code": "https://github.com/ahmedzaki-me/Portfolio"
+    },
+    "content": {
+      "en": {
+        "title": "Personal Portfolio",
+        "short_description": "A high-performance, data-driven personal portfolio featuring multilingual support and user behavior analytics.",
+        "full_description": "A professional portfolio built to showcase technical skills and projects. It emphasizes performance, clean architecture by separating data from logic, and a seamless user experience across different languages and devices.",
+        "challenges": [
+          {
+            "title": "Data-Driven Architecture",
+            "problem": "Avoiding hardcoded content to make the portfolio easily maintainable and scalable.",
+            "solution": "Built a system where the entire UI is dynamically generated from a JSON file, separating the data layer from the component logic."
+          },
+          {
+            "title": "Internationalization (i18n)",
+            "problem": "Implementing a smooth transition between Arabic (RTL) and English (LTR) without breaking the layout.",
+            "solution": "Integrated i18next and utilized Tailwind's RTL support and logical properties to ensure a consistent design across languages."
+          },
+          {
+            "title": "Performance & User Experience",
+            "problem": "Maintaining high performance while handling media assets and ensuring smooth navigation.",
+            "solution": "Optimized performance using useMemo for expensive calculations, implemented media compression, and added skeleton loaders to improve the Perceived Performance."
+          }
+        ],
+        "features": [
+          "Fully Dynamic UI driven by JSON.",
+          "Multilingual support (Arabic/English) with RTL/LTR handling.",
+          "Integrated Google Analytics 4 (GA4) for user behavior tracking.",
+          "Advanced Form handling with React Hook Form and EmailJS.",
+          "Performance-optimized with lazy loading and asset compression."
+        ]
+      },
+      "ar": {
+        "title": "معرض الأعمال الشخصي",
+        "short_description": "بورتفوليو احترافي يعتمد على البيانات، يدعم لغات متعددة مع تحسينات متقدمة للأداء وتحليل سلوك المستخدمين.",
+        "full_description": "مشروع متكامل لعرض المهارات والخبرات التقنية، يركز على الأداء العالي، ومعمارية الكود النظيفة عبر فصل البيانات عن المنطق البرمجي، وتقديم تجربة مستخدم سلسة تدعم لغات متعددة.",
+        "challenges": [
+          {
+            "title": "أتمتة البيانات (Data-Driven)",
+            "problem": "تجنب كتابة المحتوى داخل الكود مباشرة لتسهيل عملية التحديث والتوسيع مستقبلاً.",
+            "solution": "بناء هيكل برمجي يعتمد بالكامل على ملف JSON خارجي، مما يجعل إضافة أي مشروع جديد تتم في ثوانٍ دون المساس بالكود الأساسي."
+          },
+          {
+            "title": "تحدي اللغات المتعددة",
+            "problem": "تقديم تجربة مستخدم ممتازة باللغتين العربية (RTL) والإنجليزية (LTR) مع الحفاظ على سلامة التصميم.",
+            "solution": "استخدام مكتبة i18next مع توظيف خصائص Tailwind CSS لضبط الاتجاهات والتخطيط بشكل تلقائي وسلس."
+          },
+          {
+            "title": "تحسين الأداء وتجربة المستخدم",
+            "problem": "ضمان سرعة الموقع رغم وجود فيديوهات وصور، وتجنب القفزات المفاجئة في التصميم أثناء التحميل.",
+            "solution": "استخدام useMemo لتقليل عمليات إعادة الرندرة، ضغط الملفات الوسائطية، وإضافة Skeleton Loaders لتحسين تجربة المستخدم أثناء انتظار تحميل البيانات."
+          }
+        ],
+        "features": [
+          "واجهة مستخدم ديناميكية بالكامل تعتمد على ملفات JSON.",
+          "دعم كامل للغتين العربية والإنجليزية مع ضبط اتجاهات التصميم.",
+          "دمج Google Analytics 4 لتتبع تفاعل الزوار بشكل دقيق.",
+          "نظام نماذج متطور باستخدام React Hook Form والربط مع EmailJS.",
+          "تحسينات تقنية للأداء تشمل ضغط الصور والتحميل الذكي."
+        ]
+      }
+    }
+  }
+]

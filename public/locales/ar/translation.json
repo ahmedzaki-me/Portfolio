@@ -1,0 +1,51 @@
+{
+  "Hi": "مرحبًا",
+  "Available for work": "متاح للعمل",
+  "I'm a Frontend Developer With React": "مطور واجهات أمامية لمواقع الويب باستخدام React",
+  "Home": "الرئيسية",
+  "Projects": "أعمالي",
+  "About": "عني",
+  "Blogs": "المقالات",
+  "Contact": "تواصل معي",
+
+  "what I can do for you": "ماذا يمكنني أن أقدم لك؟",
+
+  "Full-Stack Web Applications": "تطبيقات ويب متكاملة",
+  "Building complete web solutions — from a performant": "بناء حلول ويب متكاملة — من واجهة أمامية عالية الأداء بـ",
+  "frontend to a scalable": "إلى خلفية قابلة للتوسع بـ",
+  "backend, with authentication, real-time data sync, and a database architecture designed to grow with your business.": "، مع نظام مصادقة، ومزامنة فورية للبيانات، ومعمارية قاعدة بيانات مصممة لتنمو مع مشروعك.",
+
+  "Admin Dashboards & Management Systems": "لوحات التحكم وأنظمة الإدارة",
+  "Designing and building enterprise-grade dashboards with role-based access control, real-time order tracking, advanced filtering, and data visualization — fully tailored to your team's workflow and business needs.": "تصميم وبناء لوحات تحكم احترافية بنظام صلاحيات متكامل، وتتبع فوري للطلبات، وفلترة متقدمة، تحليل البيانات بصريًّا — مخصصة بالكامل لاحتياجات فريقك وطبيعة عملك.",
+
+  "Performance-Optimized React Architecture": "معمارية React عالية الأداء",
+  "Architecting React apps built to last — optimized data fetching with": "بناء تطبيقات React بمعمارية مدروسة للمدى البعيد — جلب بيانات محسّن بـ",
+  ", type-safe forms with": "، ونماذج آمنة بـ",
+  "and": "و",
+  ", and a clean modular structure that stays maintainable as your product scales.": "، وهيكل كود نظيف ومنظم يسهل توسعته مع نمو مشروعك.",
+
+  "About ME": "عني",
+  "What started as curiosity about how things are built has grown into a focus on building things that actually work — in production, at scale, and for real users. I specialize in": "ما بدأ كفضول لفهم كيف تُبنى الأشياء، تحوّل اليوم إلى تركيز على بناء حلول برمجية واقعية — في بيئات حقيقية، على نطاق واسع، ولمستخدمين حقيقيين. أتخصص في",
+  "and the modern JavaScript ecosystem, and I've expanded into full-stack development with": "ومنظومة JavaScript الحديثة، وتوسّعت نحو تطوير Full-Stack بـ",
+  ", building systems with real-time sync, role-based access control, and architecture decisions that hold up over time. I care about writing code that's not just functional, but maintainable, performant, and built with the people using it in mind.": "، ببناء أنظمة تشمل المزامنة الفورية، وصلاحيات الوصول، وقرارات معمارية تواكب نمو المشروع المستقبلي. أهتم بكتابة كود لا يكتفي بأن يعمل، بل يكون قابلًا للصيانة، عالي الأداء، ومبنيًا مع مراعاة من سيستخدمه.",
+
+  "Call Me": "اتصل بي",
+  "+20 1286113602": "1286113602 20+",
+  "Email": "البريد الإلكتروني",
+  "View My CV": "عرض السيرة الذاتية",
+  "Featured Projects": "أبرز الأعمال",
+  "Details": "تفاصيل",
+  "Live Demo": "عرض حي",
+  "Social": "التواصل الاجتماعي",
+  "Let's work together": "لنعمل معًا",
+  "Got a project in mind or a role to fill? Drop me a message and let's get to work.": "هل لديك مشروع قيد التنفيذ أو وظيفة شاغرة؟ أرسل لي رسالة لنبدأ العمل.",
+  "Name": "الاسم",
+  "Service Needed?": "الخدمة المطلوبة",
+  "Select...": "اختر...",
+  "Offer": "عرض عمل",
+  "Web Development": "تطوير الويب",
+  "What Can I Help You?": "كيف يمكنني مساعدتك؟",
+  "Hello, I'd like to enquire about...": "مرحبًا، أود الاستفسار عن...",
+  "SUBMIT": "إرسال",
+  "SUBMITTING...": "يتم الإرسال"
+}
