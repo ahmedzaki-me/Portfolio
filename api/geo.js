@@ -1,17 +1,11 @@
-export const config = {
-  runtime: "edge",
-};
+export default function handler(req, res) {
+  const city = req.headers["x-vercel-ip-city"];
+  const region = req.headers["x-vercel-ip-region"];
+  const country = req.headers["x-vercel-ip-country"];
 
-export default function handler(request) {
-  const city = request.headers.get("x-vercel-ip-city") || "Unknown City";
-  const region =
-    request.headers.get("x-vercel-ip-country-region") || "Unknown Region";
-
-  return new Response(JSON.stringify({ city, region }), {
-    status: 200,
-    headers: {
-      "content-type": "application/json",
-      "cache-control": "no-store, no-cache",
-    },
+  res.json({
+    city: city ? decodeURIComponent(city) : null,
+    region: region ? decodeURIComponent(region) : null,
+    country: country || null,
   });
 }
