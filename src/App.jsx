@@ -21,22 +21,30 @@ function App() {
 
   useEffect(() => {
     if (!posthog) return;
-    
+
     const setupGeoTracking = async () => {
       try {
         const res = await fetch("/api/geo");
         const data = await res.json();
-        posthog.register({
-          visitor_city: data.city,
-          visitor_governorate: data.region,
-        });
+
+        if (data.city) {
+          posthog.register({
+            visitor_city: data.city,
+            visitor_governorate: data.region,
+            visitor_country: data.country,
+          });
+        }
+
+        posthog.capture("$pageview");
       } catch (e) {
         console.error("Geo fetching failed", e);
+        posthog.capture("$pageview");
       }
     };
 
     setupGeoTracking();
   }, [posthog]);
+
   return (
     <>
       <PostHogPageTracker />
