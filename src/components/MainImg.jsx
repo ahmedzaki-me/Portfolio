@@ -7,7 +7,7 @@ export default function MainImg() {
   return (
     <div className="relative w-50 md:w-60 ">
       {!isLoaded && (
-        <div className="animate-pulse bg-sideBG rounded-3xl w-full h-110 aspect-3/4 md:aspect-square"></div>
+        <div className="animate-pulse bg-sideBG rounded-3xl w-full h-110 max-md:h-87"></div>
       )}
       <img
         className={`rounded-3xl transition-opacity duration-500 ${

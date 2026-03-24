@@ -4,7 +4,11 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { TbCopy } from "react-icons/tb";
 
+import { usePostHog } from "@posthog/react";
+
 export default function ProjectDetails() {
+  const posthog = usePostHog();
+
   const { t, i18n } = useTranslation();
   const currentLang = (i18n.resolvedLanguage || i18n.language || "en").slice(
     0,
@@ -58,6 +62,7 @@ export default function ProjectDetails() {
 
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Links */}
           <div className="space-y-8">
             <div className="bg-card-bg p-6 rounded-3xl border border-sideBG/10 shadow-sm">
               <h3 className="text-xl font-bold mb-4 text-text">
@@ -65,15 +70,27 @@ export default function ProjectDetails() {
               </h3>
               <div className="flex flex-col gap-3">
                 <a
+                  onClick={() => {
+                    posthog.capture("live_demo_clicked", {
+                      project: display?.title,
+                    });
+                  }}
                   href={links.live_demo}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="border-2 border-main bg-main text-white text-center py-3 rounded-xl font-bold hover:brightness-110 transition-all active:scale-95"
                 >
                   {t("Live Demo")}
                 </a>
                 <a
+                  onClick={() => {
+                    posthog.capture("source_code_clicked", {
+                      project: display?.title,
+                    });
+                  }}
                   href={links.source_code}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="border-2 border-main text-main text-center py-3 rounded-xl font-bold hover:bg-main hover:text-text transition-all"
                 >
                   Source Code

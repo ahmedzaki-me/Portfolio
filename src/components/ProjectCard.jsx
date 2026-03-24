@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import ReactGA from "react-ga4";
 import { useTranslation } from "react-i18next";
 const defaultVed = "/Ved/default.mp4";
+
+import { usePostHog } from "@posthog/react";
 
 export default function ProjectCard({
   slug,
@@ -14,14 +15,7 @@ export default function ProjectCard({
   description = "description",
 }) {
   const { t } = useTranslation();
-
-  const handleClick = (type) => {
-    ReactGA.event("projects", {
-      project_title: title,
-      click_type: type,
-      project_id: id,
-    });
-  };
+  const posthog = usePostHog();
 
   return (
     <div
@@ -71,13 +65,20 @@ export default function ProjectCard({
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => handleClick("Live Demo")}
+              onClick={() => {
+                posthog.capture("live_demo_clicked", { project: title });
+              }}
             >
               {t("Live Demo")}
             </a>
           </button>
 
-          <Link to={`/projects/${slug}`} onClick={() => handleClick("Details")}>
+          <Link
+            to={`/projects/${slug}`}
+            onClick={() => {
+              posthog.capture("project_details_clicked", { project: title });
+            }}
+          >
             <button
               key={id}
               className="px-3 py-2 bg-main rounded-xl cursor-pointer text-white"

@@ -62,50 +62,6 @@ export default function About() {
             </p>
           </li>
         </ul>
-        {/* 
-        <ul className="text-lg text-text leading-relaxed bg-pBG space-y-4 list-[circle]! list-inside ps-6.25 pe-1.25">
-          <li className="marker:text-text">
-            <p>
-              <span className="font-semibold text-main">
-                {t("Custom Web Applications")}:
-              </span>{" "}
-              {t("Building dynamic, high-performance apps using")}{" "}
-              <span className="text-main">React</span> {t("&")}{" "}
-              <span className="text-main">Tailwind CSS</span>
-              {t(", with seamless navigation via ")}
-              <span className="text-main"> React Router</span>.
-            </p>
-          </li>
-
-          <li className="marker:text-text">
-            <p>
-              <span className="font-semibold text-main">
-                {t("Business Process Automation")}:
-              </span>{" "}
-              {t(
-                "I don't just build UI; I connect your frontend to powerful backends like",
-              )}{" "}
-              <span className="text-main">AppSheet </span>
-              {t(
-                "and automate workflows-like sending structured orders and invoices directly to",
-              )}{" "}
-              <span className="text-main">WhatsApp</span>.
-            </p>
-          </li>
-
-          <li className="marker:text-text">
-            <p>
-              <span className="font-semibold text-main">
-                {t("API Integration & Data Management")}:
-              </span>{" "}
-              {t(
-                "Expertly handling complex data fetching and state management using",
-              )}{" "}
-              <span className="text-main">Axios</span>{" "}
-              {t("to ensure your app stays fast and responsive.")}
-            </p>
-          </li>
-        </ul> */}
       </div>
 
       <div className="container scroll-mt-18" id="about" ref={sectionRefAbout}>
@@ -129,18 +85,7 @@ export default function About() {
             ", building systems with real-time sync, role-based access control, and architecture decisions that hold up over time. I care about writing code that's not just functional, but maintainable, performant, and built with the people using it in mind.",
           )}
         </p>
-        {/* <p className="text-lg text-text leading-relaxed italic bg-pBG  border-s-3 border-main p-4">
-          {t(
-            "My journey into web development was sparked by a deep curiosity about how things are built. Today, I dedicate my time to mastering modern technologies like",
-          )}
-          <span className="font-semibold text-main mx-1 not-italic inline-block">
-            {" "}
-            React {t("&")} Tailwind CSS{" "}
-          </span>
-          {t(
-            "to craft interfaces that are not only visually stunning but also intuitive, high-performing, and accessible to everyone.",
-          )}{" "}
-        </p> */}
+
 
         <div className="gap-8 py-10 grid grid-cols-2 justify-items-start max-md:grid-cols-1">
           <div className="text-lg text-text dir-ltr">

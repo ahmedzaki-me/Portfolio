@@ -1,21 +1,18 @@
 import { MdRemoveRedEye } from "react-icons/md";
 import { useTranslation } from "react-i18next";
-import ReactGA from "react-ga4";
+
+import { usePostHog } from "@posthog/react";
 
 export default function DownloadCV() {
   const { t } = useTranslation();
-
-  const handleClick = () => {
-    ReactGA.event("View_resume", {
-      file_name: "Ahmed-Zaki-CV",
-      file_extevsion: "PDF",
-    });
-  };
+  const posthog = usePostHog();
 
   return (
     <div className="flex flex-col items-center text-nowrap">
       <a
-        onClick={handleClick}
+        onClick={() => {
+          posthog.capture("cv_viewed");
+        }}
         href="/Ahmed-Zaki-CV.pdf"
         target="_blank"
         rel="noopener noreferrer"
