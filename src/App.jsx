@@ -7,7 +7,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import ProjectsPage from "./pages/ProjectsPage";
-
+import ZakiChat from "./components/ZakiChat.js";
 import useMode from "./hooks/useMode.js";
 
 import { PostHogPageTracker } from "./PostHogPageTracker.jsx";
@@ -51,6 +51,7 @@ function App() {
 
       <div className="flex flex-col min-h-screen justify-between">
         <ScrollToTop />
+        <ZakiChat />
         {mode === "dark" && <SpaceBackground />}
         <Header />
         <Routes>

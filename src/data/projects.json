@@ -122,6 +122,114 @@
     }
   },
   {
+    "id": "zaki-chat",
+    "slug": "zaki-chat-realtime-messaging",
+    "media": {
+      "videoLg_url": "Ved/zaki-chat-lg.mp4",
+      "videoSm_url": "Ved/zaki-chat-sm.mp4",
+      "thumbnail": "images/ZakiChat-hero.jpg"
+    },
+    "tags": ["React", "Supabase", "TypeScript", "Realtime"],
+    "tech_stack": {
+      "frontend": [
+        "React 19 (Vite 8)",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Shadcn UI",
+        "Radix UI",
+        "Lucide React"
+      ],
+      "logic": [
+        "React Router 7",
+        "TanStack Query v5 (React Query)",
+        "React Hook Form",
+        "Zod",
+        "Motion (Framer Motion v12)",
+        "date-fns",
+        "next-themes"
+      ],
+      "backend_admin": [
+        "Supabase (Auth, PostgreSQL, Realtime, Edge Functions)",
+        "OneSignal",
+        "Cloudflare Turnstile",
+        "Sonner"
+      ],
+      "hosting": "Cloudflare"
+    },
+    "links": {
+      "live_demo": "https://chat.ahmedzaki.me",
+      "source_code": "https://github.com/ahmedzaki-me/zaki-chat"
+    },
+    "content": {
+      "en": {
+        "title": "Zaki Chat",
+        "short_description": "A secure real-time messaging platform for seamless client communication, with guest access, push notifications, and instant message delivery.",
+        "full_description": "A production-ready real-time chat application designed to enable secure and private communication with potential clients. It supports flexible authentication — users can join instantly as a guest or register with email and password, with the option to upgrade a guest session to a full account without losing conversation history. Built with a strong focus on reliability, it features instant push notifications via OneSignal, presence tracking, infinite scroll pagination.",
+        "challenges": [
+          {
+            "title": "Guest Authentication & Account Upgrade",
+            "problem": "Allowing users to start chatting immediately as a guest without registration, while giving them a seamless path to preserve their identity and history by upgrading to a full account later.",
+            "solution": "Leveraged Supabase Anonymous Auth to create a temporary identity on first visit. When the user chooses to upgrade, their anonymous account is linked to their new email/password credentials, preserving all conversation history without any data migration."
+          },
+          {
+            "title": "Infinite Scroll with Real-Time Sync",
+            "problem": "Combining cursor-based pagination (loading older messages on scroll) with Supabase Realtime subscriptions (appending new messages instantly) without causing duplicate entries, layout jumps, or stale cache issues.",
+            "solution": "Used TanStack Query's useInfiniteQuery for paginated history, and a separate Realtime channel to prepend incoming messages directly into the query cache. Deduplication is handled via message IDs before any cache update, keeping the feed consistent and jump-free."
+          },
+          {
+            "title": "Guest Auth Abuse & Bot Protection",
+            "problem": "Anonymous authentication, while frictionless for legitimate users, exposes the app to abuse — bots or malicious actors could flood the system with fake guest sessions, spamming conversations and exhausting database resources.",
+            "solution": "Integrated Cloudflare Turnstile as a lightweight, privacy-friendly CAPTCHA layer on the guest sign-in flow. Before any anonymous session is created, the client must pass a Turnstile challenge verified server-side via a Supabase Edge Function — blocking automated abuse without adding friction for real users."
+          }
+        ],
+        "features": [
+          "Flexible authentication: guest access, email/password, and seamless guest-to-account upgrade.",
+          "Real-time messaging powered by Supabase Realtime with instant delivery.",
+          "Push notifications via OneSignal.",
+          "Presence tracking with online, away, and offline status indicators.",
+          "Infinite scroll pagination using cursor-based queries with useInfiniteQuery.",
+          "Optimistic UI updates for a lag-free messaging experience.",
+          "Swipe-to-reply gesture on messages built with Framer Motion.",
+          "Soft-delete for messages with instant UI removal and privacy-safe PostgreSQL views.",
+          "Automatic message retry on send failure with failed-state indicators and manual resend option."
+        ]
+      },
+      "ar": {
+        "title": "Zaki Chat",
+        "short_description": "منصة مراسلة فورية آمنة وسرية للتواصل مع العملاء المحتملين، تدعم الدخول كضيف والإشعارات الفورية والمزامنة اللحظية.",
+        "full_description": "تطبيق مراسلة فوري جاهز للإنتاج، مُصمم لتمكين التواصل الآمن والسري مع العملاء المحتملين. يدعم خيارات مرنة للمصادقة — يمكن للمستخدم البدء فورًا كضيف أو التسجيل بالبريد الإلكتروني، مع إمكانية ترقية جلسة الضيف إلى حساب كامل دون فقدان سجل المحادثات. يتميز بالإشعارات الفورية عبر OneSignal، وتتبع حالة الاتصال، والتصفح اللانهائي للرسائل.",
+        "challenges": [
+          {
+            "title": "تسجيل الدخول كضيف وترقية الحساب",
+            "problem": "السماح للمستخدمين ببدء المحادثة فورًا كضيوف دون تسجيل، مع توفير مسار سلس للحفاظ على هويتهم وسجلهم عند الترقية لاحقًا.",
+            "solution": "الاستفادة من Anonymous Auth في Supabase لإنشاء هوية مؤقتة عند أول زيارة. عند اختيار الترقية، يتم ربط الحساب المجهول ببيانات البريد الإلكتروني الجديدة، مع الحفاظ الكامل على سجل المحادثات دون أي هجرة للبيانات."
+          },
+          {
+            "title": "التصفح اللانهائي مع المزامنة الفورية",
+            "problem": "دمج التحميل المرحلي للرسائل القديمة عند التمرير للأعلى مع استقبال الرسائل الجديدة فورًا عبر Realtime، دون تكرار أو قفزات في التصميم.",
+            "solution": "استخدام useInfiniteQuery لتحميل السجل المرحلي، وقناة Realtime منفصلة لإضافة الرسائل الجديدة مباشرة في الـ cache. يتم تصفية التكرارات عبر معرّفات الرسائل قبل أي تحديث للـ cache، للحفاظ على تجربة سلسة."
+          },
+          {
+            "title": "حماية التسجيل كضيف من الهجمات الآلية",
+            "problem": "التسجيل كضيف رغم سهولته للمستخدم الحقيقي، يفتح الباب أمام إساءة الاستخدام — إذ يمكن للبوتات أو المهاجمين إغراق النظام بجلسات وهمية، مما يُثقل قاعدة البيانات ويُعرّض المحادثات للتلاعب.",
+            "solution": "دمج Cloudflare Turnstile كطبقة CAPTCHA خفيفة وصديقة للخصوصية على مسار تسجيل الدخول كضيف. قبل إنشاء أي جلسة مجهولة، يجب على العميل اجتياز تحدي Turnstile يُتحقق منه من جهة السيرفر عبر Supabase Edge Function — مما يصد الأتمتة الضارة دون إضافة أي عقبة للمستخدمين الحقيقيين."
+          }
+        ],
+        "features": [
+          "مصادقة مرنة: دخول كضيف، بريد إلكتروني وباسوورد، وترقية سلسة من الضيف إلى حساب كامل.",
+          "مراسلة فورية مدعومة بـ Supabase Realtime مع تسليم لحظي.",
+          "إشعارات فورية عبر OneSignal.",
+          "تتبع حالة الاتصال: أونلاين، بعيد، وأوفلاين.",
+          "تصفح لانهائي للرسائل باستخدام Cursor-Based Pagination مع useInfiniteQuery.",
+          "تحديثات واجهة تفاؤلية (Optimistic UI) لتجربة مراسلة خالية من التأخير.",
+          "إيماءة السحب للرد على الرسائل مبنية بـ Framer Motion.",
+          "حذف آمن للرسائل مع اختفاء فوري من الواجهة وحماية البيانات عبر PostgreSQL Views.",
+          "إعادة إرسال تلقائية عند فشل الإرسال مع مؤشر للرسائل الفاشلة وخيار إعادة المحاولة يدويًّا."
+        ]
+      }
+    }
+  },
+  {
     "id": "lo2ma-eskndrany",
     "slug": "lo2ma-eskndrany-ecommerce",
     "media": {

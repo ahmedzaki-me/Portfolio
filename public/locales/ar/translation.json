@@ -7,28 +7,26 @@
   "About": "عني",
   "Blogs": "المقالات",
   "Contact": "تواصل معي",
-
   "what I can do for you": "ماذا يمكنني أن أقدم لك؟",
-
   "Full-Stack Web Applications": "تطبيقات ويب متكاملة",
   "Building complete web solutions — from a performant": "بناء حلول ويب متكاملة — من واجهة أمامية عالية الأداء بـ",
   "frontend to a scalable": "إلى خلفية قابلة للتوسع بـ",
   "backend, with authentication, real-time data sync, and a database architecture designed to grow with your business.": "، مع نظام مصادقة، ومزامنة فورية للبيانات، ومعمارية قاعدة بيانات مصممة لتنمو مع مشروعك.",
-
   "Admin Dashboards & Management Systems": "لوحات التحكم وأنظمة الإدارة",
-  "Designing and building enterprise-grade dashboards with role-based access control, real-time order tracking, advanced filtering, and data visualization — fully tailored to your team's workflow and business needs.": "تصميم وبناء لوحات تحكم احترافية بنظام صلاحيات متكامل، وتتبع فوري للطلبات، وفلترة متقدمة، تحليل البيانات بصريًّا — مخصصة بالكامل لاحتياجات فريقك وطبيعة عملك.",
-
+  "Designing and building enterprise-grade dashboards with role-based access control, real-time order tracking, advanced filtering, and data visualization — fully tailored to your team's workflow and business needs.": "تصميم وبناء لوحات تحكم احترافية بنظام صلاحيات متكامل، وتتبع فوري للطلبات، وفلترة متقدمة، وتحليل بياني للبيانات — مخصصة بالكامل لاحتياجات فريقك وطبيعة عملك.",
   "Performance-Optimized React Architecture": "معمارية React عالية الأداء",
   "Architecting React apps built to last — optimized data fetching with": "بناء تطبيقات React بمعمارية مدروسة للمدى البعيد — جلب بيانات محسّن بـ",
   ", type-safe forms with": "، ونماذج آمنة بـ",
   "and": "و",
   ", and a clean modular structure that stays maintainable as your product scales.": "، وهيكل كود نظيف ومنظم يسهل توسعته مع نمو مشروعك.",
-
+  "Real-Time Chat & Messaging Systems": "أنظمة الشات والمراسلة الفورية",
+  "Building production-grade chat applications with instant message delivery, presence tracking, push notifications via PWA and": "بناء تطبيقات شات احترافية بتوصيل فوري للرسائل، وتتبع حالة الاتصال، وإشعارات فورية عبر PWA و",
+  ", infinite scroll pagination, and soft-delete — powered by": "، وتحميل تدريجي للرسائل، وحذف ناعم — مشغّل بـ",
   "About ME": "عني",
   "What started as curiosity about how things are built has grown into a focus on building things that actually work — in production, at scale, and for real users. I specialize in": "ما بدأ كفضول لفهم كيف تُبنى الأشياء، تحوّل اليوم إلى تركيز على بناء حلول برمجية واقعية — في بيئات حقيقية، على نطاق واسع، ولمستخدمين حقيقيين. أتخصص في",
-  "and the modern JavaScript ecosystem, and I've expanded into full-stack development with": "ومنظومة JavaScript الحديثة، وتوسّعت نحو تطوير Full-Stack بـ",
-  ", building systems with real-time sync, role-based access control, and architecture decisions that hold up over time. I care about writing code that's not just functional, but maintainable, performant, and built with the people using it in mind.": "، ببناء أنظمة تشمل المزامنة الفورية، وصلاحيات الوصول، وقرارات معمارية تواكب نمو المشروع المستقبلي. أهتم بكتابة كود لا يكتفي بأن يعمل، بل يكون قابلًا للصيانة، عالي الأداء، ومبنيًا مع مراعاة من سيستخدمه.",
-
+  "and the modern": "ومنظومة ",
+  " ecosystem, and I've expanded into full-stack development with": " الحديثة، وتوسّعت نحو تطوير Full-Stack بـ",
+  ", building systems with real-time messaging, presence tracking, push notifications, and role-based access control — and architecture decisions that hold up over time. I care about writing code that's not just functional, but maintainable, performant, and built with the people using it in mind.": "، ببناء أنظمة تشمل المراسلة الفورية، وتتبع حالة الاتصال، والإشعارات الفورية، وصلاحيات الوصول — وقرارات معمارية تواكب نمو المشروع. أهتم بكتابة كود لا يكتفي بأن يعمل، بل يكون قابلًا للصيانة، عالي الأداء، ومبنيًا مع مراعاة من سيستخدمه.",
   "Call Me": "اتصل بي",
   "+20 1286113602": "1286113602 20+",
   "Email": "البريد الإلكتروني",

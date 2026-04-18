@@ -14,7 +14,7 @@ export default function About() {
         <h2 className="text-3xl md:text-5xl py-4 font-black uppercase text-text tracking-tight">
           {t("what I can do for you")}
         </h2>
-        <ul className="text-lg text-text leading-relaxed bg-pBG space-y-4 list-[circle]! list-inside ps-6.25 pe-1.25">
+        <ul className="text-lg text-text leading-relaxed bg-pBG space-y-4 list-[circle]! list-inside py-2 ps-6.25 pe-1.25">
           {/* Service 1 */}
           <li className="marker:text-text">
             <p>
@@ -61,6 +61,25 @@ export default function About() {
               )}
             </p>
           </li>
+
+          {/* Service 4 */}
+          <li className="marker:text-text">
+            <p>
+              <span className="font-semibold text-main">
+                {t("Real-Time Chat & Messaging Systems")}:
+              </span>{" "}
+              {t(
+                "Building production-grade chat applications with instant message delivery, presence tracking, push notifications via PWA and",
+              )}{" "}
+              <span className="text-main">OneSignal</span>
+              {t(
+                ", infinite scroll pagination, and soft-delete — powered by",
+              )}{" "}
+              <span className="text-main">Supabase Realtime</span> {t("and")}{" "}
+              <span className="text-main">Edge Functions</span>
+              {"."}
+            </p>
+          </li>
         </ul>
       </div>
 
@@ -75,17 +94,18 @@ export default function About() {
           <span className="font-semibold text-main mx-1 not-italic inline-block">
             React
           </span>
-          {t(
-            "and the modern JavaScript ecosystem, and I've expanded into full-stack development with",
-          )}
+          {t("and the modern")}
+          <span className="font-semibold text-main not-italic inline-block">
+            JavaScript / TypeScript
+          </span>
+          {t(" ecosystem, and I've expanded into full-stack development with")}
           <span className="font-semibold text-main mx-1 not-italic inline-block">
             Supabase
           </span>
           {t(
-            ", building systems with real-time sync, role-based access control, and architecture decisions that hold up over time. I care about writing code that's not just functional, but maintainable, performant, and built with the people using it in mind.",
+            ", building systems with real-time messaging, presence tracking, push notifications, and role-based access control — and architecture decisions that hold up over time. I care about writing code that's not just functional, but maintainable, performant, and built with the people using it in mind.",
           )}
         </p>
-
 
         <div className="gap-8 py-10 grid grid-cols-2 justify-items-start max-md:grid-cols-1">
           <div className="text-lg text-text dir-ltr">
