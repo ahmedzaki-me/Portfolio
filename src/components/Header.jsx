@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { ModeContext } from "../context/ModeContext";
 import { Link } from "react-router-dom";
 import { useScrollNavigator } from "../hooks/useScrollToRef";
-import logo from "../../public/AhmedZakiLogo2.jpg";
+import logo from "/AhmedZakiLogo2.jpg";
 //Translation
 import { useTranslation } from "react-i18next";
 // icons
