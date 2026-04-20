@@ -31,10 +31,10 @@
         "OneSignal",
         "Sonner"
       ],
-      "hosting": "Vercel"
+      "hosting": "Cloudflare"
     },
     "links": {
-      "live_demo": "https://zaki-dashboard.vercel.app",
+      "live_demo": "https://dashboard.ahmedzaki.me/",
       "source_code": "https://github.com/ahmedzaki-me/Zaki-Dashboard"
     },
     "content": {
@@ -246,10 +246,10 @@
       ],
       "logic": ["React Hooks", "Axios"],
       "backend_admin": ["AppSheet", "Google Sheets"],
-      "hosting": "Vercel"
+      "hosting": "Cloudflare"
     },
     "links": {
-      "live_demo": "https://lo2ma-eskndrany.vercel.app/",
+      "live_demo": "https://lo2ma.ahmedzaki.me/",
       "source_code": "https://github.com/ahmedzaki-me/lo2ma_eskndrany_With_React"
     },
     "content": {
@@ -325,7 +325,7 @@
       "logic": ["React Hooks", "Custom Hooks", "i18next", "React Router"],
       "backend_admin": ["Dynamic JSON Data", "EmailJS"],
       "analytics": ["React-GA4 (Google Analytics)"],
-      "hosting": "Vercel"
+      "hosting": "Cloudflare"
     },
     "links": {
       "live_demo": "https://ahmedzaki.me",
