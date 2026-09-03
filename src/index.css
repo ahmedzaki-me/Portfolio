@@ -35,10 +35,9 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* font-family: var(--font-sans); */
   }
   body {
-    @apply relative p-0 m-0 bg-bg;
+    @apply relative p-0 m-0 bg-bg rtl:font-semibold overflow-x-hidden;
   }
   body::before {
     content: "";
@@ -101,5 +100,38 @@ img {
   }
   .nav-bar {
     @apply p-2 text-[22px] bg-main rounded-full cursor-pointer text-text;
+  }
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-main);
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: var(--primary);
+    background-clip: content-box;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-main) transparent;
   }
 }

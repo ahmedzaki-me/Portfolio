@@ -20,15 +20,15 @@ posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_TOKEN, {
 });
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <PostHogProvider client={posthog}>
-      <BrowserRouter>
-        <ModeProvider>
-          <ScrollProvider>
-            <App />
-          </ScrollProvider>
-        </ModeProvider>
-      </BrowserRouter>
-    </PostHogProvider>
-  </StrictMode>,
+  // <StrictMode>
+  <PostHogProvider client={posthog}>
+    <BrowserRouter>
+      <ModeProvider>
+        <ScrollProvider>
+          <App />
+        </ScrollProvider>
+      </ModeProvider>
+    </BrowserRouter>
+  </PostHogProvider>,
+  // </StrictMode>,
 );

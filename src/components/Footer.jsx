@@ -14,6 +14,7 @@ export default function Footer() {
             <div className="font-medium text-text">
               {t("Call Me")}: <br className="max-lg:hidden" />
               <a
+                dir="ltr"
                 href="tel:+201286113602"
                 target="_blank"
                 className="underline! text-main font-bold decoration-main/30 underline-offset-4 hover:decoration--main transition-colors"

@@ -1,49 +1,77 @@
 {
-  "Hi": "مرحبًا",
-  "Available for work": "متاح للعمل",
-  "I'm a Frontend Developer With React": "مطور واجهات أمامية لمواقع الويب باستخدام React",
+  "Hi": "أهلًا",
+
+  "Available for work": "متاح للعمل والمشاريع",
+
+  "I build modern, scalable web experiences with React, Next.js, and modern web technologies.": "أطوّر تجارب ويب حديثة وقابلة للتوسع باستخدام React وNext.js وأحدث تقنيات الويب.",
+
   "Home": "الرئيسية",
-  "Projects": "أعمالي",
+
+  "Projects": "المشاريع",
+
   "About": "عني",
+
   "Blogs": "المقالات",
+
   "Contact": "تواصل معي",
-  "what I can do for you": "ماذا يمكنني أن أقدم لك؟",
-  "Full-Stack Web Applications": "تطبيقات ويب متكاملة",
-  "Building complete web solutions — from a performant": "بناء حلول ويب متكاملة — من واجهة أمامية عالية الأداء بـ",
-  "frontend to a scalable": "إلى خلفية قابلة للتوسع بـ",
-  "backend, with authentication, real-time data sync, and a database architecture designed to grow with your business.": "، مع نظام مصادقة، ومزامنة فورية للبيانات، ومعمارية قاعدة بيانات مصممة لتنمو مع مشروعك.",
-  "Admin Dashboards & Management Systems": "لوحات التحكم وأنظمة الإدارة",
-  "Designing and building enterprise-grade dashboards with role-based access control, real-time order tracking, advanced filtering, and data visualization — fully tailored to your team's workflow and business needs.": "تصميم وبناء لوحات تحكم احترافية بنظام صلاحيات متكامل، وتتبع فوري للطلبات، وفلترة متقدمة، وتحليل بياني للبيانات — مخصصة بالكامل لاحتياجات فريقك وطبيعة عملك.",
-  "Performance-Optimized React Architecture": "معمارية React عالية الأداء",
-  "Architecting React apps built to last — optimized data fetching with": "بناء تطبيقات React بمعمارية مدروسة للمدى البعيد — جلب بيانات محسّن بـ",
-  ", type-safe forms with": "، ونماذج آمنة بـ",
-  "and": "و",
-  ", and a clean modular structure that stays maintainable as your product scales.": "، وهيكل كود نظيف ومنظم يسهل توسعته مع نمو مشروعك.",
-  "Real-Time Chat & Messaging Systems": "أنظمة الشات والمراسلة الفورية",
-  "Building production-grade chat applications with instant message delivery, presence tracking, push notifications via PWA and": "بناء تطبيقات شات احترافية بتوصيل فوري للرسائل، وتتبع حالة الاتصال، وإشعارات فورية عبر PWA و",
-  ", infinite scroll pagination, and soft-delete — powered by": "، وتحميل تدريجي للرسائل، وحذف ناعم — مشغّل بـ",
-  "About ME": "عني",
-  "What started as curiosity about how things are built has grown into a focus on building things that actually work — in production, at scale, and for real users. I specialize in": "ما بدأ كفضول لفهم كيف تُبنى الأشياء، تحوّل اليوم إلى تركيز على بناء حلول برمجية واقعية — في بيئات حقيقية، على نطاق واسع، ولمستخدمين حقيقيين. أتخصص في",
-  "and the modern": "ومنظومة ",
-  " ecosystem, and I've expanded into full-stack development with": " الحديثة، وتوسّعت نحو تطوير Full-Stack بـ",
-  ", building systems with real-time messaging, presence tracking, push notifications, and role-based access control — and architecture decisions that hold up over time. I care about writing code that's not just functional, but maintainable, performant, and built with the people using it in mind.": "، ببناء أنظمة تشمل المراسلة الفورية، وتتبع حالة الاتصال، والإشعارات الفورية، وصلاحيات الوصول — وقرارات معمارية تواكب نمو المشروع. أهتم بكتابة كود لا يكتفي بأن يعمل، بل يكون قابلًا للصيانة، عالي الأداء، ومبنيًا مع مراعاة من سيستخدمه.",
-  "Call Me": "اتصل بي",
-  "+20 1286113602": "1286113602 20+",
+
+  "Ahmed Zaki": "أحمد زكي",
+
+  "Frontend Developer": "مطور واجهات أمامية",
+
+  "what I can do for you": "الخدمات التي أقدمها",
+
+  "Web Applications": "تطبيقات الويب",
+
+  "I build modern web applications with React and Next.js, focusing on clean interfaces, good performance, and maintainable code.": "أطوّر تطبيقات ويب حديثة باستخدام React وNext.js، مع التركيز على واجهات واضحة وسهلة الاستخدام، وأداء جيد، وكود منظم يسهل تطويره وصيانته.",
+
+  "Business Dashboards": "لوحات التحكم وأنظمة الإدارة",
+
+  "I build dashboards and management systems that help businesses organize products, orders, employees, permissions, and day-to-day operations.": "أطوّر لوحات تحكم وأنظمة إدارة تساعد أصحاب الأعمال على تنظيم المنتجات والطلبات والموظفين والصلاحيات، وإدارة مختلف عمليات العمل اليومية.",
+
+  "SaaS & Real-Time Features": "منصات SaaS والميزات الفورية",
+
+  "I build and manage Zaki System, a SaaS platform that helps businesses organize their operations and provides them with their own online stores.": "أطوّر وأدير Zaki System، وهي منصة SaaS تساعد أصحاب الأعمال على إدارة عملياتهم، وتوفر لكل نشاط متجرًا إلكترونيًّا خاصًا به.",
+
+  "About ME": "نبذة عني",
+
+  "I'm a frontend developer currently working at Enexabit, where I contribute to building web products with React and Next.js. I also built Zaki System, a SaaS platform that I offer as a service to businesses to manage their products, orders, and daily operations, while providing them with their own online store. The project is built with React, Next.js, and Supabase, and I continue to improve it based on real user needs.": "أنا مطوِّر واجهات أمامية أعمل حاليًّا في Enexabit، حيث أساهم في تطوير منتجات الويب باستخدام React وNext.js. كما طوَّرت Zaki System، وهي منصّة SaaS أقدِّمها كخدمة لأصحاب الأعمال لإدارة منتجاتهم وطلباتهم وعملياتهم اليومية، مع توفير متجر إلكتروني خاص بهم. بُني المشروع باستخدام React وNext.js وSupabase، وأواصل تطويره وتحسينه ليخدم احتياجات المستخدمين بشكل فعلي.",
+
+  "Call Me": "الهاتف",
+
+  "+20 1286113602": "+20 1286113602",
+
   "Email": "البريد الإلكتروني",
-  "View My CV": "عرض السيرة الذاتية",
-  "Featured Projects": "أبرز الأعمال",
-  "Details": "تفاصيل",
-  "Live Demo": "عرض حي",
+
+  "View My CV": "عرض سيرتي الذاتية",
+
+  "Featured Projects": "أبرز المشاريع",
+
+  "Details": "التفاصيل",
+
+  "Live Demo": "تجربة المشروع",
+
   "Social": "التواصل الاجتماعي",
+
   "Let's work together": "لنعمل معًا",
-  "Got a project in mind or a role to fill? Drop me a message and let's get to work.": "هل لديك مشروع قيد التنفيذ أو وظيفة شاغرة؟ أرسل لي رسالة لنبدأ العمل.",
+
+  "Got a project in mind or a role to fill? Drop me a message and let's get to work.": "لديك مشروع في ذهنك أو تبحث عن مطور للانضمام إلى فريقك؟ أرسل لي رسالة ودعنا نتحدث عن التفاصيل.",
+
   "Name": "الاسم",
-  "Service Needed?": "الخدمة المطلوبة",
+
+  "Service Needed?": "ما الخدمة التي تحتاجها؟",
+
   "Select...": "اختر...",
+
   "Offer": "عرض عمل",
+
   "Web Development": "تطوير الويب",
+
   "What Can I Help You?": "كيف يمكنني مساعدتك؟",
+
   "Hello, I'd like to enquire about...": "مرحبًا، أود الاستفسار عن...",
+
   "SUBMIT": "إرسال",
-  "SUBMITTING...": "يتم الإرسال"
+
+  "SUBMITTING...": "جارٍ الإرسال..."
 }

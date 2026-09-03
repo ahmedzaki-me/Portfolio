@@ -12,26 +12,28 @@ export default function Landing() {
   return (
     <div className="light:bg-linear-to-b from-[#fafafa] to-main/20">
       <div className="container relative text-center py-section flex justify-center items-center flex-col">
-        <LiaCodeSolid className="hidden light:block absolute top-25 left-10 text-4xl lg:text-7xl font-bold text-main -rotate-15" />
-        <PiBracketsCurlyLight className="hidden light:block absolute bottom-35 right-10 text-4xl lg:text-7xl font-bold text-main -rotate-15" />
+        <LiaCodeSolid className="hidden light:block absolute top-25 start-10 text-4xl lg:text-7xl font-bold text-main -rotate-15" />
+        <PiBracketsCurlyLight className="hidden light:block absolute bottom-35 end-10 text-4xl lg:text-7xl font-bold text-main -rotate-15" />
 
-        <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter leading-none font-oswald text-shadow-lg/30 text-shadow-main mb-1 text-text">
-          Ahmed Zaki
+        <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter leading-none font-oswald text-shadow-lg/30 text-shadow-main mb-1 rtl:mb-5 text-text">
+          {t("Ahmed Zaki")}
         </h2>
         <MainImg />
-        <h2 className="italic text-shadow-lg/30 text-shadow-main text-3xl md:text-6xl font-black uppercase tracking-tighter leading-none font-oswald mt-1 mb-3 text-text">
-          Front-End Developer
+        <h2 className="italic text-shadow-lg/30 text-shadow-main text-3xl md:text-6xl font-black uppercase tracking-tighter leading-none font-oswald mt-1 rtl:mt-5 mb-3 text-text">
+          {t("Frontend Developer")}
         </h2>
 
         <div className=" text-center ">
           <p className="text-lg text-text leading-relaxed italic">
-            {t("I'm a Frontend Developer With React")}
+            {t(
+              "I build modern, scalable web experiences with React, Next.js, and modern web technologies.",
+            )}
           </p>
         </div>
         {/* =============== */}
         <div
           onClick={() => handleScroll("what")}
-          className="my-section-mobile size-6 animate-bounce h-10 w-10 rounded-full bg-main text-header flex items-center justify-center text-[18px]"
+          className="my-section-mobile size-6 animate-bounce h-10 w-10 rounded-full bg-main text-header flex items-center justify-center text-[18px] cursor-pointer"
         >
           <FaArrowDown />
         </div>

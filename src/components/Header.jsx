@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import { ModeContext } from "../context/ModeContext";
 import { Link } from "react-router-dom";
 import { useScrollNavigator } from "../hooks/useScrollToRef";
@@ -15,6 +15,9 @@ import { FiSun } from "react-icons/fi";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [openIcon, setOpenIcon] = useState(true);
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
+
   const { mode, handleMode } = useContext(ModeContext);
   const handleScroll = useScrollNavigator();
 
@@ -24,12 +27,34 @@ export default function Header() {
     document.body.dir = i18n.dir();
   }, [i18n.language, i18n]);
 
+  useEffect(() => {
+    const handleScrollDirection = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 80) {
+        setShowHeader(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+      if (currentScrollY > lastScrollY.current) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScrollDirection, { passive: true });
+    return () => window.removeEventListener("scroll", handleScrollDirection);
+  }, []);
+
   return (
     <>
       <div
         className={`${openIcon && "h-30"} border border-[#333] light:border-white
-                        fixed z-10 top-5 right-1 text-text bg-header
-                        rounded-full transition-all duration-300 ease-in-out`}
+                  fixed z-10 top-5 right-1 text-text bg-header
+                  rounded-full transition-all duration-300 ease-in-out
+                  ${showHeader || isOpen ? "translate-x-0 opacity-100" : "translate-x-24 opacity-0 pointer-events-none"}`}
       >
         {openIcon ? (
           <div className="flex flex-col">
@@ -66,13 +91,16 @@ export default function Header() {
       </div>
 
       <header
-        className={`header border border-[#333] light:border-white ${isOpen ? "max-lg:h-77 max-lg:w-75" : "h-14"}
+        className={`header border border-[#333] light:border-white
+          transition-transform duration-300 ease-in-out
+          ${showHeader || isOpen ? "translate-y-0" : "-translate-y-24"}
+          ${isOpen ? "max-lg:h-77 max-lg:w-75" : "h-14"}
     `}
       >
         <div className="h-11 w-11 flex items-center justify-between gap-4 -translate-y-0.5">
           <img src={logo} alt="Logo" className="rounded-full " />
           <div
-            className={`${isOpen && "hidden "} lg:hidden min-w-39 flex items-center gap-3`}
+            className={`${isOpen && "hidden "} lg:hidden min-w-39 flex items-center gap-3 text-nowrap`}
           >
             {t("Available for work")}
             <div

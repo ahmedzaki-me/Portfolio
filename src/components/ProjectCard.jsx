@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-const defaultVed = "/Ved/default.mp4";
-
 import { usePostHog } from "@posthog/react";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 export default function ProjectCard({
   slug,
-  id,
   demo,
-  lg = defaultVed,
-  sm = defaultVed,
   img,
   title = "title",
   description = "description",
@@ -18,76 +14,112 @@ export default function ProjectCard({
   const posthog = usePostHog();
 
   return (
-    <div
-      className="group relative bg-card-bg rounded-3xl
-                  p-4 transition-all duration-300 hover:-translate-y-3
-                  shadow-[3px_0px_10px_color-mix(in_srgb,var(--color-sideBG),transparent_80%)]
-                  hover:shadow-[0px_3px_10px_color-mix(in_srgb,var(--color-sideBG),transparent_80%)]
-"
+    <article
+      className="
+        group relative overflow-hidden rounded-xl
+        bg-card-bg border border-transparent
+        transition-all duration-300
+        hover:border-main/30
+        hover:shadow-xl
+      "
     >
-      <div className="relative overflow-hidden rounded-xl bg-bg">
-        <div className="md:hidden aspect-9/16 w-full max-w-70 mx-auto">
-          <video
-            src={sm}
-            poster={img}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
+      {/* Thumbnail */}
+      <Link
+        to={`/projects/${slug}`}
+        onClick={() => {
+          posthog.capture("project_details_clicked", {
+            project: title,
+          });
+        }}
+        className="block"
+      >
+        <div className="relative aspect-[1278/862] overflow-hidden bg-bg">
+          <img
+            src={img}
+            alt={title}
+            loading="lazy"
+            className="
+              h-full w-full object-contain
+              transition-transform duration-500
+              group-hover:scale-103
+            "
           />
-        </div>
 
-        <div className="hidden md:block aspect-video w-full">
-          <video
-            src={lg}
-            poster={img}
-            autoPlay
-            loop
-            muted
-            preload="none"
-            className="w-full h-full object-cover"
+          {/* Hover overlay */}
+          <div
+            className="
+              absolute inset-0
+              bg-black/0
+              transition-colors duration-300
+              group-hover:bg-black/20
+            "
           />
-        </div>
-      </div>
 
-      <div className="mt-4 pb-5 bt-3 text-text relative ">
-        <h3 className="font-bold text-xl uppercase">{title}</h3>
-        <p className="text-lg leading-relaxed">{description} </p>
-
-        <div className=" pt-8 flex items-center justify-between font-bold">
-          <button
-            className=" px-3 py-2 bg-transparent border-main border-2 rounded-xl cursor-pointer text-main duration-300
-                        relative overflow-hidden before:content-[''] before:absolute before:left-0 before:top-0 hover:text-white
-                        before:h-full before:w-0 before:bg-main before:transition-all before:duration-300 before:-z-10 hover:before:w-full"
+          <div
+            className="
+              absolute right-4 top-4
+              flex h-10 w-10 items-center justify-center
+              rounded-full bg-white/90 text-black
+              opacity-0 scale-90
+              transition-all duration-300
+              group-hover:opacity-100
+              group-hover:scale-100
+            "
           >
-            <a
-              href={demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                posthog.capture("live_demo_clicked", { project: title });
-              }}
-            >
-              {t("Live Demo")}
-            </a>
-          </button>
+            <FaArrowUpRightFromSquare size={20} />
+          </div>
+        </div>
+      </Link>
+
+      {/* Content */}
+      <div className="p-5">
+        <h3 className="text-xl font-bold uppercase text-text">{title}</h3>
+
+        <p className="mt-2 text-base leading-relaxed text-text/70 line-clamp-2">
+          {description}
+        </p>
+
+        {/* Actions */}
+        <div className="mt-6 flex items-center gap-3">
+          <a
+            href={demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              posthog.capture("live_demo_clicked", {
+                project: title,
+              });
+            }}
+            className="
+              rounded-xl bg-main px-4 py-2.5
+              font-semibold text-white
+              transition-all duration-300
+              hover:opacity-90
+            "
+          >
+            {t("Live Demo")}
+          </a>
 
           <Link
             to={`/projects/${slug}`}
             onClick={() => {
-              posthog.capture("project_details_clicked", { project: title });
+              posthog.capture("project_details_clicked", {
+                project: title,
+              });
             }}
+            className="
+              rounded-xl border border-text/15
+              px-4 py-2.5
+              font-semibold text-text
+              transition-all duration-300
+              hover:border-main
+              hover:text-main
+            "
           >
-            <button
-              key={id}
-              className="px-3 py-2 bg-main rounded-xl cursor-pointer text-white"
-            >
-              {t("Details")}
-            </button>
+            {t("Details")}
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
