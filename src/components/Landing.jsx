@@ -26,7 +26,7 @@ export default function Landing() {
         <div className=" text-center ">
           <p className="text-lg text-text leading-relaxed italic">
             {t(
-              "I build modern, scalable web experiences with React, Next.js, and modern web technologies.",
+              "I build modern, scalable web applications using React, Next.js, and modern web technologies.",
             )}
           </p>
         </div>
