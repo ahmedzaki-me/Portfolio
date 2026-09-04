@@ -31,7 +31,7 @@ const SOCIAL_LINKS = [
   {
     platform: "Facebook",
     icon: FaFacebook,
-    href: "https://www.facebook.com/share/172y3NuuF3/",
+    href: "https://www.facebook.com/ahmedzaki.me",
   },
   {
     platform: "Youtube",
