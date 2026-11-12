@@ -3,16 +3,14 @@
     "id": "zaki-system",
     "slug": "zaki-system-multi-tenant-saas",
     "media": {
-      "videoLg_url": "Ved/zaki-system-lg.mp4",
-      "videoSm_url": "Ved/zaki-system-sm.mp4",
-      "thumbnail": "images/zaki-system-hero.png"
+      "thumbnail": "images/zaki-system-hero.webp"
     },
     "tags": ["React", "Next.js", "Supabase", "Multi-Tenant", "SaaS"],
     "tech_stack": {
       "dashboard": [
         "React 19",
         "Vite 7",
-        "javaScript",
+        "JavaScript",
         "Tailwind CSS 4",
         "Shadcn UI",
         "React Router 7",
@@ -83,8 +81,8 @@
       },
       "ar": {
         "title": "Zaki System",
-        "short_description": "منصة SaaS متعددة المستأجرين تتيح لأصحاب الأعمال إدارة عملياتهم وإنشاء متجر إلكتروني مخصص لكل نشاط من خلال نظام واحد.",
-        "full_description": "Zaki System هي منصة SaaS متعددة المستأجرين، تم تطويرها لمساعدة أصحاب المشاريع الصغيرة والمتوسطة على إدارة عملياتهم اليومية من خلال نظام واحد. يحصل كل عميل على لوحة تحكم مستقلة لإدارة المنتجات والطلبات والموظفين والمبيعات والصلاحيات، بالإضافة إلى متجر إلكتروني خاص به يمكن تخصيص هويته البصرية ومحتواه وإعداداته. تم بناء المنصة حول معمارية مشتركة قادرة على خدمة عدة أعمال في الوقت نفسه، مما يلغي الحاجة إلى إنشاء مشروع أو Deployment منفصل لكل عميل.",
+        "short_description": "منصة Multi-Tenant SaaS تتيح لأصحاب الأعمال إدارة عملياتهم وإنشاء متجر إلكتروني مخصص لكل نشاط من خلال نظام واحد.",
+        "full_description": "Zaki System هي منصة Multi-Tenant SaaS، تم تطويرها لمساعدة أصحاب المشاريع الصغيرة والمتوسطة على إدارة عملياتهم اليومية من خلال نظام واحد. يحصل كل عميل على لوحة تحكم مستقلة لإدارة المنتجات والطلبات والموظفين والمبيعات والصلاحيات، بالإضافة إلى متجر إلكتروني خاص به يمكن تخصيص هويته البصرية ومحتواه وإعداداته. تم بناء المنصة حول معمارية مشتركة قادرة على خدمة عدة أعمال في الوقت نفسه، مما يلغي الحاجة إلى إنشاء مشروع أو Deployment منفصل لكل عميل.",
         "challenges": [
           {
             "title": "تصميم معمارية Multi-Tenant",
@@ -103,12 +101,12 @@
           }
         ],
         "features": [
-          "معمارية SaaS متعددة المستأجرين تخدم عدة أعمال من خلال تطبيق واحد.",
+          "معمارية Multi-Tenant SaaS تخدم عدة أعمال من خلال تطبيق واحد.",
           "لوحة تحكم مستقلة لكل Tenant مع عزل كامل للبيانات وصلاحيات قابلة للتخصيص للموظفين.",
           "متاجر إلكترونية ديناميكية بهوية بصرية وTheme ومحتوى وإعدادات مختلفة لكل Tenant.",
           "إدارة المنتجات والتصنيفات والطلبات والموظفين والمبيعات.",
           "تحديث الطلبات في الوقت الفعلي باستخدام Supabase Realtime.",
-          "نظام صلاحيات قائم على الأدوار مع أربعة أدوار محددة مسبقًا: المالك، المسؤول، مدير الطلبات، وأمين الخزانة.",
+          "نظام صلاحيات قائم على الأدوار مع أربعة أدوار محددة مسبقًا: المالك، المسؤول، مدير الطلبات، والكاشير.",
           "خطط اشتراك مع حدود وميزات يتم التحكم فيها حسب الباقة.",
           "تحليلات مبيعات ومؤشرات أداء مع رسوم بيانية تفاعلية.",
           "إشعارات فورية وتكامل مع Telegram لمتابعة العمليات.",
@@ -121,106 +119,137 @@
     "id": "zaki-chat",
     "slug": "zaki-chat-realtime-messaging",
     "media": {
-      "videoLg_url": "Ved/zaki-chat-lg.mp4",
-      "videoSm_url": "Ved/zaki-chat-sm.mp4",
-      "thumbnail": "images/ZakiChat-hero.jpg"
+      "thumbnail": "images/ZakiChat-hero.webp"
     },
-    "tags": ["React", "Supabase", "TypeScript", "Realtime"],
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO"
+    ],
     "tech_stack": {
       "frontend": [
-        "React 19 (Vite 8)",
+        "React 19",
         "TypeScript",
-        "Tailwind CSS 4",
-        "Shadcn UI",
+        "Vite 8",
+        "Tailwind CSS v4",
+        "shadcn/ui",
         "Radix UI",
-        "Lucide React"
-      ],
-      "logic": [
-        "React Router 7",
-        "TanStack Query v5 (React Query)",
+        "React Router v7",
+        "TanStack Query v5",
+        "IndexedDB Persister",
+        "Socket.IO Client v4",
+        "Workbox PWA",
         "React Hook Form",
         "Zod",
-        "Motion (Framer Motion v12)",
-        "date-fns",
-        "next-themes"
+        "OpenAPI TypeGen"
       ],
-      "backend_admin": [
-        "Supabase (Auth, PostgreSQL, Realtime, Edge Functions)",
-        "OneSignal",
+      "backend": [
+        "Node.js 24",
+        "Express 5",
+        "TypeScript",
+        "MongoDB",
+        "Mongoose 9",
+        "Socket.IO v4 (WebSocket)",
+        "Zod",
+        "OpenAPI 3.1 (Swagger UI)",
+        "AsyncAPI 2.6"
+      ],
+      "security_storage": [
+        "AES-256-GCM Encryption",
+        "Argon2",
+        "jose (JWT)",
+        "Refresh Token Rotation",
+        "Backblaze B2 (S3)",
+        "Magic-Byte Verification",
         "Cloudflare Turnstile",
-        "Sonner"
+        "express-rate-limit",
+        "Web Push (VAPID)"
       ],
       "hosting": "Cloudflare"
     },
     "links": {
       "live_demo": "https://chat.ahmedzaki.me",
-      "source_code": "https://github.com/ahmedzaki-me/zaki-chat"
+      "source_code": "https://github.com/ahmedzaki-me/zaki-chat",
+      "backend_code": "https://github.com/ahmedzaki-me/zaki-chat-api"
     },
     "content": {
       "en": {
         "title": "Zaki Chat",
-        "short_description": "A secure real-time messaging platform for seamless client communication, with guest access, push notifications, and instant message delivery.",
-        "full_description": "A production-ready real-time chat application designed to enable secure and private communication with potential clients. It supports flexible authentication — users can join instantly as a guest or register with email and password, with the option to upgrade a guest session to a full account without losing conversation history. Built with a strong focus on reliability, it features instant push notifications via OneSignal, presence tracking, infinite scroll pagination.",
+        "short_description": "A full-stack 1-to-1 real-time messaging platform built from scratch with React, TypeScript, Node.js, Express, MongoDB, and Socket.IO.",
+        "full_description": "Zaki Chat (v2.0.0) is a 1-to-1 real-time messaging platform built across frontend and backend for direct visitor-to-owner chat. Visitors can start chatting instantly as guests or register and upgrade their session to a permanent account without losing conversation history. The client uses a Feature-Driven architecture with IndexedDB media and query persistence, end-to-end OpenAPI type generation, voice notes with waveforms, client-side WebP compression, and Workbox PWA notifications. The backend is powered by a custom Node.js 24, Express 5, MongoDB, and Socket.IO server featuring AES-256-GCM at-rest encryption, Backblaze B2 presigned uploads with server-side magic-byte verification, and 15-minute JWT access tokens with rotating httpOnly refresh tokens.",
         "challenges": [
           {
-            "title": "Guest Authentication & Account Upgrade",
-            "problem": "Allowing users to start chatting immediately as a guest without registration, while giving them a seamless path to preserve their identity and history by upgrading to a full account later.",
-            "solution": "Leveraged Supabase Anonymous Auth to create a temporary identity on first visit. When the user chooses to upgrade, their anonymous account is linked to their new email/password credentials, preserving all conversation history without any data migration."
+            "title": "At-Rest Message Encryption & Safe Concurrent Edits",
+            "problem": "Storing private client messages in plain text inside MongoDB exposes sensitive conversations at rest, while editing encrypted records can cause lost updates without concurrency control.",
+            "solution": "Implemented field-level AES-256-GCM encryption on message text and captions using 12-byte IVs, 16-byte auth tags, and versioned keys (keyVersion) for zero-downtime key rotation, alongside optimistic locking on text.iv during edits."
           },
           {
-            "title": "Infinite Scroll with Real-Time Sync",
-            "problem": "Combining cursor-based pagination (loading older messages on scroll) with Supabase Realtime subscriptions (appending new messages instantly) without causing duplicate entries, layout jumps, or stale cache issues.",
-            "solution": "Used TanStack Query's useInfiniteQuery for paginated history, and a separate Realtime channel to prepend incoming messages directly into the query cache. Deduplication is handled via message IDs before any cache update, keeping the feed consistent and jump-free."
+            "title": "Session Security, Replay Defense & Bot Protection",
+            "problem": "Supporting instant nickname-only guest access without email registration alongside permanent accounts opens the door to credential stuffing, rotating-proxy bot floods, and stolen refresh token replay attacks.",
+            "solution": "Built a dual-token flow (15-min HS256 JWT via jose + SHA-256 hashed httpOnly Refresh Tokens with 90-day rotation) that immediately revokes the entire session and disconnects active WebSockets on token reuse. Auth routes pass through a multi-layer pipeline (ipAuthLimiter -> Cloudflare Turnstile -> globalAuthLimiter -> strictAccountLimiter)."
           },
           {
-            "title": "Guest Auth Abuse & Bot Protection",
-            "problem": "Anonymous authentication, while frictionless for legitimate users, exposes the app to abuse — bots or malicious actors could flood the system with fake guest sessions, spamming conversations and exhausting database resources.",
-            "solution": "Integrated Cloudflare Turnstile as a lightweight, privacy-friendly CAPTCHA layer on the guest sign-in flow. Before any anonymous session is created, the client must pass a Turnstile challenge verified server-side via a Supabase Edge Function — blocking automated abuse without adding friction for real users."
+            "title": "Direct S3 Uploads & Server-Side Magic-Byte Verification",
+            "problem": "Proxying large images, videos, and voice notes through the Node.js server creates bottlenecks, yet trusting client-reported MIME types on direct S3 uploads allows spoofed or malicious files.",
+            "solution": "Clients upload directly to Backblaze B2 via presigned PUT URLs, then the server inspects the first 16 bytes (Range: bytes=0-15) via S3 to verify real file signatures (WEBP, JPEG, PNG, MP4, WebM, OGG) and immediately purges spoofed uploads."
+          },
+          {
+            "title": "Real-Time Engine, High-Water Receipts & Smart Push",
+            "problem": "Tracking per-message read flags creates heavy database writes, while sending push alerts while a user is actively viewing a chat causes duplicate notifications.",
+            "solution": "Built a WebSocket-only Socket.IO gateway with in-memory fixed-window rate limiting, role-aware dual-view serialization (toBoth), and monotonic high-water ObjectId read/delivery markers updated via atomic bulkWrite. It also pairs IndexedDB media and query persistence with app:visibility suppression for VAPID Web Push."
           }
         ],
         "features": [
-          "Flexible authentication: guest access, email/password, and seamless guest-to-account upgrade.",
-          "Real-time messaging powered by Supabase Realtime with instant delivery.",
-          "Push notifications via OneSignal.",
-          "Presence tracking with online, away, and offline status indicators.",
-          "Infinite scroll pagination using cursor-based queries with useInfiniteQuery.",
-          "Optimistic UI updates for a lag-free messaging experience.",
-          "Swipe-to-reply gesture on messages built with Framer Motion.",
-          "Soft-delete for messages with instant UI removal and privacy-safe PostgreSQL views.",
-          "Automatic message retry on send failure with failed-state indicators and manual resend option."
+          "End-to-end Full-Stack architecture: React 19 Feature-Driven client + Node.js 24 / Express 5 / MongoDB API.",
+          "Instant guest access with username and password account upgrade (Argon2 hashing) preserving full chat history.",
+          "AES-256-GCM field-level message encryption with key versioning and optimistic edit locking.",
+          "Pure WebSocket Socket.IO engine with live presence, ephemeral typing indicators, and dual-view serialization.",
+          "Direct Backblaze B2 media uploads with server-side magic-byte signature verification and 1-hour presigned URLs.",
+          "Rich messaging: voice notes with waveforms, client-side WebP compression, custom video player, replies, edits, and emoji reactions.",
+          "High-water mark delivered/read receipts with atomic unread tracking and permanent Owner moderation controls.",
+          "IndexedDB media & TanStack Query cache persistence paired with custom Workbox PWA & VAPID Web Push notifications.",
+          "Interactive OpenAPI 3.1 (Swagger UI) & AsyncAPI 2.6 contracts with automated frontend TypeScript schema generation."
         ]
       },
       "ar": {
         "title": "Zaki Chat",
-        "short_description": "منصة مراسلة فورية آمنة وسرية للتواصل مع العملاء المحتملين، تدعم الدخول كضيف والإشعارات الفورية والمزامنة اللحظية.",
-        "full_description": "تطبيق مراسلة فوري جاهز للإنتاج، مُصمم لتمكين التواصل الآمن والسري مع العملاء المحتملين. يدعم خيارات مرنة للمصادقة — يمكن للمستخدم البدء فورًا كضيف أو التسجيل بالبريد الإلكتروني، مع إمكانية ترقية جلسة الضيف إلى حساب كامل دون فقدان سجل المحادثات. يتميز بالإشعارات الفورية عبر OneSignal، وتتبع حالة الاتصال، والتصفح اللانهائي للرسائل.",
+        "short_description": "منصة مراسلة فورية متكاملة (Full-Stack) مبنية من الصفر باستخدام React وTypeScript وNode.js وExpress وMongoDB وSocket.IO.",
+        "full_description": "تطبيق Zaki Chat (v2.0.0) هو منصة مراسلة فورية 1-to-1 للتواصل المباشر مع مالك الموقع، تم بناؤها من الصفر في الـ Frontend والـ Backend. تتيح للزوار بدء المحادثة فورًا كضيوف أو التسجيل وترقية الجلسة إلى حساب دائم دون فقدان سجل الرسائل. تعتمد الواجهة على معمارية Feature-Driven مع تخزين محلي عبر IndexedDB، وتوليد الـ TypeScript types تلقائيًا من OpenAPI، ورسائل صوتية ومصوّرة، وإشعارات PWA. أما الـ Backend فمبني بـ Node.js 24 وExpress 5 وMongoDB وSocket.IO مع تشفير الرسائل بـ AES-256-GCM، ورفع مباشر إلى Backblaze B2 مع فحص Magic Bytes على السيرفر، وتوكنز JWT مع تدوير الـ Refresh Tokens.",
         "challenges": [
           {
-            "title": "تسجيل الدخول كضيف وترقية الحساب",
-            "problem": "السماح للمستخدمين ببدء المحادثة فورًا كضيوف دون تسجيل، مع توفير مسار سلس للحفاظ على هويتهم وسجلهم عند الترقية لاحقًا.",
-            "solution": "الاستفادة من Anonymous Auth في Supabase لإنشاء هوية مؤقتة عند أول زيارة. عند اختيار الترقية، يتم ربط الحساب المجهول ببيانات البريد الإلكتروني الجديدة، مع الحفاظ الكامل على سجل المحادثات دون أي هجرة للبيانات."
+            "title": "تشفير الرسائل في قاعدة البيانات وحماية التعديلات",
+            "problem": "تخزين المحادثات الخاصة كنص صريح داخل MongoDB يعرض البيانات للخطر عند اختراق قاعدة البيانات، كما أن تعديل الرسائل المشفرة دون تحكم قد يؤدي لتضارب التحديثات.",
+            "solution": "تطبيق تشفير AES-256-GCM على مستوى الحقل لنصوص الرسائل والتعليقات باستخدام IV بطول 12 بايت وAuthTag وإصدارات مفاتيح (keyVersion) لتدويرها دون توقف، مع قفل تفاؤلي (Optimistic Locking) على text.iv أثناء التعديل."
           },
           {
-            "title": "التصفح اللانهائي مع المزامنة الفورية",
-            "problem": "دمج التحميل المرحلي للرسائل القديمة عند التمرير للأعلى مع استقبال الرسائل الجديدة فورًا عبر Realtime، دون تكرار أو قفزات في التصميم.",
-            "solution": "استخدام useInfiniteQuery لتحميل السجل المرحلي، وقناة Realtime منفصلة لإضافة الرسائل الجديدة مباشرة في الـ cache. يتم تصفية التكرارات عبر معرّفات الرسائل قبل أي تحديث للـ cache، للحفاظ على تجربة سلسة."
+            "title": "أمان الجلسات، صد Replay Attacks والحماية من البوتات",
+            "problem": "توفير دخول سلس للضيوف بجانب الحسابات الدائمة يفتح المجال لهجمات البوتات وتخمين كلمات المرور وإعادة استخدام التوكن المسروق.",
+            "solution": "تصميم نظام مصادقة مزدوج (JWT Access Token لمدة 15 دقيقة عبر jose + Refresh Token في httpOnly cookie محفوظة بـ SHA-256 hash لمدة 90 يومًا مع التدوير) يُبطل الجلسة بالكامل ويفصل اتصالات WebSocket فورًا عند اكتشاف إعادة استخدام توكن قديم. كما تمر طلبات المصادقة عبر طبقات حماية متسلسلة (ipAuthLimiter ثم Cloudflare Turnstile ثم globalAuthLimiter وstrictAccountLimiter)."
           },
           {
-            "title": "حماية التسجيل كضيف من الهجمات الآلية",
-            "problem": "التسجيل كضيف رغم سهولته للمستخدم الحقيقي، يفتح الباب أمام إساءة الاستخدام — إذ يمكن للبوتات أو المهاجمين إغراق النظام بجلسات وهمية، مما يُثقل قاعدة البيانات ويُعرّض المحادثات للتلاعب.",
-            "solution": "دمج Cloudflare Turnstile كطبقة CAPTCHA خفيفة وصديقة للخصوصية على مسار تسجيل الدخول كضيف. قبل إنشاء أي جلسة مجهولة، يجب على العميل اجتياز تحدي Turnstile يُتحقق منه من جهة السيرفر عبر Supabase Edge Function — مما يصد الأتمتة الضارة دون إضافة أي عقبة للمستخدمين الحقيقيين."
+            "title": "الرفع المباشر للوسائط والتحقق من Magic Bytes",
+            "problem": "تمرير الصور والفيديوهات والتسجيلات الصوتية عبر خادم Node.js يستهلك موارد السيرفر، بينما الاعتماد على نوع الملف المرسل من العميل يسمح برفع ملفات مزيفة.",
+            "solution": "توجيه الرفع مباشرة إلى Backblaze B2 عبر Presigned PUT URLs، ثم يقوم الخادم بقراءة أول 16 بايت (Range: bytes=0-15) للتحقق من التوقيع الحقيقي للملف (WEBP, JPEG, PNG, MP4, WebM, OGG) وحذف أي ملف مزيف فورًا."
+          },
+          {
+            "title": "محرك الوقت الفعلي، علامات القراءة وكبت الإشعارات الذكي",
+            "problem": "تخزين حالة القراءة لكل رسالة على حدة يضغط قاعدة البيانات، كما أن إرسال إشعارات Push أثناء فتح المستخدم للمحادثة يسبب إزعاجًا وتكرارًا.",
+            "solution": "بناء طبقة Socket.IO عبر WebSocket فقط مع Rate Limiting في الذاكرة وتمرير بيانات مخصصة حسب الدور (toBoth)، وتتبع حدود الوصول والقراءة عبر High-Water Mark ObjectIds بعملية bulkWrite واحدة. كما يدعم التطبيق التخزين المحلي في IndexedDB وكبت إشعارات Web Push عندما يكون التبويب مفتوحًا ونشطًا (app:visibility)."
           }
         ],
         "features": [
-          "مصادقة مرنة: دخول كضيف، بريد إلكتروني وباسوورد، وترقية سلسة من الضيف إلى حساب كامل.",
-          "مراسلة فورية مدعومة بـ Supabase Realtime مع تسليم لحظي.",
-          "إشعارات فورية عبر OneSignal.",
-          "تتبع حالة الاتصال: أونلاين، بعيد، وأوفلاين.",
-          "تصفح لانهائي للرسائل باستخدام Cursor-Based Pagination مع useInfiniteQuery.",
-          "تحديثات واجهة تفاؤلية (Optimistic UI) لتجربة مراسلة خالية من التأخير.",
-          "إيماءة السحب للرد على الرسائل مبنية بـ Framer Motion.",
-          "حذف آمن للرسائل مع اختفاء فوري من الواجهة وحماية البيانات عبر PostgreSQL Views.",
-          "إعادة إرسال تلقائية عند فشل الإرسال مع مؤشر للرسائل الفاشلة وخيار إعادة المحاولة يدويًّا."
+          "معمارية Full-Stack متكاملة: واجهة React 19 بنظام Feature-Driven وخادم Node.js 24 وExpress 5 وMongoDB.",
+          "دخول فوري كضيف مع ترقية سلسة لحساب دائم (بتشفير Argon2) مع الاحتفاظ بكامل المحادثة.",
+          "تشفير الرسائل في قاعدة البيانات بـ AES-256-GCM مع دعم تدوير المفاتيح وحماية التعديلات.",
+          "محرك Socket.IO عبر WebSocket لتتبع التواجد الفوري ومؤشرات الكتابة وتعدد الجلسات.",
+          "رفع مباشر للوسائط إلى Backblaze B2 مع فحص Magic Bytes على السيرفر وروابط تحميل مؤقتة.",
+          "رسائل صوتية مع عرض الموجة الصوتية (Waveform)، ضغط الصور إلى WebP في المتصفح، مشغل فيديو، ردود وتعديلات وتفاعلات.",
+          "تتبع الوصول والقراءة بنظام High-Water Mark مع تحديث عداد غير المقروء في عملية واحدة (Atomic) وأدوات إشراف للمالك.",
+          "تخزين مؤقت في IndexedDB ودعم Workbox PWA مع إشعارات Web Push عبر VAPID.",
+          "توثيق تفاعلي كامل بـ OpenAPI 3.1 (Swagger UI) وAsyncAPI 2.6 مع توليد أنواع TypeScript تلقائيًا."
         ]
       }
     }
@@ -229,16 +258,11 @@
     "id": "lo2ma-eskndrany",
     "slug": "lo2ma-eskndrany-ecommerce",
     "media": {
-      "videoLg_url": "Ved/lg.mp4",
-      "videoSm_url": "Ved/sm.mp4",
-      "thumbnail": "images/lo2ma-hero.jpg"
+      "thumbnail": "images/lo2ma-hero.webp"
     },
     "tags": ["React", "AppSheet", "E-commerce"],
     "tech_stack": {
-      "frontend": [
-        "React (Vite)",
-        "Native CSS"
-      ],
+      "frontend": ["React (Vite)", "Native CSS"],
       "logic": ["React Hooks", "Axios"],
       "backend_admin": ["AppSheet", "Google Sheets"],
       "hosting": "Cloudflare"
@@ -282,12 +306,12 @@
         "full_description": "متجر إلكتروني متخصص تم تطويره لمطعم 'لقمة اسكندراني'. يركز المشروع على تقديم تجربة مستخدم سلسة مع توفير لوحة تحكم إدارية مرنة لإدارة القائمة والأسعار في الوقت الفعلي.",
         "challenges": [
           {
-            "title": "الهجرة وقابلية التوسع",
+            "title": "نقل الكود وقابلية التوسع",
             "problem": "تحويل موقع قديم مبني بـ HTML/CSS/JS إلى React مع الحفاظ على سلامة التصميم وتعزيز الأداء.",
             "solution": "إعادة هيكلة الكود المصدري إلى مكونات وظيفية قابلة لإعادة الاستخدام وتنظيم ملفات CSS لضمان انتقال سلس مستقبلًا لمكتبات واجهة المستخدم مثل Tailwind CSS."
           },
           {
-            "title": "إدارة البيانات بدون خلفية برمجية",
+            "title": "إدارة البيانات بدون Backend مخصص",
             "problem": "طلب العميل تحكمًا كاملًا في عناصر القائمة والأسعار دون الحاجة لتدخل تقني.",
             "solution": "دمج AppSheet مع Google Sheets كـ CMS سحابي. أتاح ذلك للعميل تحديث المحتوى فورًا عبر واجهة موبايل، مع انعكاس التغييرات على الموقع في الوقت الفعلي."
           },
@@ -299,7 +323,7 @@
         ],
         "features": [
           "نظام إدارة محتوى ديناميكي عبر Google Sheets و AppSheet.",
-          "نظام عربة تسوق متكامل يعمل بالكامل على جانب العميل (client-side).",
+          "نظام عربة تسوق متكامل يعمل بالكامل في المتصفح (Client-side).",
           "تنسيق تلقائي للطلبات وتكامل مباشر مع واتساب.",
           "واجهة مستخدم عالية الأداء ومتجاوبة ومحسنة لمستخدمي الهاتف."
         ]
@@ -310,16 +334,23 @@
     "id": "personal-portfolio",
     "slug": "ahmed-zaki-professional-portfolio",
     "media": {
-      "videoLg_url": "Ved/portfolio-lg.mp4",
-      "videoSm_url": "Ved/portfolio-sm.mp4",
-      "thumbnail": "images/portfolio-hero.png"
+      "thumbnail": "images/portfolio-hero.webp"
     },
-    "tags": ["React", "Tailwind CSS", "i18next", "Analytics"],
+    "tags": ["React", "Tailwind CSS", "i18next", "PostHog"],
     "tech_stack": {
-      "frontend": ["React (Vite)", "Tailwind CSS (Dark/Light Mode)"],
-      "logic": ["React Hooks", "Custom Hooks", "i18next", "React Router"],
-      "backend_admin": ["Dynamic JSON Data", "EmailJS"],
-      "analytics": ["React-GA4 (Google Analytics)"],
+      "frontend": [
+        "React 19 (Vite 7)",
+        "React Compiler",
+        "Tailwind CSS 4 (Dark/Light Mode)"
+      ],
+      "logic": [
+        "React Router 7",
+        "i18next (Bundled Locales)",
+        "React Hook Form",
+        "Custom Hooks"
+      ],
+      "backend_services": ["EmailJS", "Dynamic JSON Data"],
+      "analytics": ["PostHog Analytics"],
       "hosting": "Cloudflare"
     },
     "links": {
@@ -329,60 +360,60 @@
     "content": {
       "en": {
         "title": "Personal Portfolio",
-        "short_description": "A high-performance, data-driven personal portfolio featuring multilingual support and user behavior analytics.",
-        "full_description": "A professional portfolio built to showcase technical skills and projects. It emphasizes performance, clean architecture by separating data from logic, and a seamless user experience across different languages and devices.",
+        "short_description": "A high-performance, bilingual personal portfolio featuring PostHog product analytics, dynamic project case studies, and dark/light theming.",
+        "full_description": "A personal portfolio built to showcase full-stack engineering skills and projects. It emphasizes fast initial loading through route-level code splitting, WebP asset optimization, bundled Arabic/English translations with RTL/LTR support, and product analytics powered by PostHog.",
         "challenges": [
           {
-            "title": "Data-Driven Architecture",
-            "problem": "Avoiding hardcoded content to make the portfolio easily maintainable and scalable.",
-            "solution": "Built a system where the entire UI is dynamically generated from a JSON file, separating the data layer from the component logic."
+            "title": "Data-Driven & Bilingual Architecture",
+            "problem": "Keeping project details, translations, and RTL/LTR layouts synchronized without hardcoded duplication or flash of untranslated text.",
+            "solution": "Structured project case studies in JSON alongside bundled i18next locales and automatic html lang/dir synchronization."
           },
           {
-            "title": "Internationalization (i18n)",
-            "problem": "Implementing a smooth transition between Arabic (RTL) and English (LTR) without breaking the layout.",
-            "solution": "Integrated i18next and utilized Tailwind's RTL support and logical properties to ensure a consistent design across languages."
+            "title": "Performance & Bundle Optimization",
+            "problem": "Unoptimized images and a single monolithic JavaScript bundle slowed initial page loads and increased GPU usage.",
+            "solution": "Converted visual assets to WebP, implemented React.lazy route splitting and manual vendor chunks, enabled the React Compiler, and optimized the starfield canvas for DPR and tab visibility."
           },
           {
-            "title": "Performance & User Experience",
-            "problem": "Maintaining high performance while handling media assets and ensuring smooth navigation.",
-            "solution": "Optimized performance using useMemo for expensive calculations, implemented media compression, and added skeleton loaders to improve the Perceived Performance."
+            "title": "Reliable SPA Analytics Without Duplicate Pageviews",
+            "problem": "Tracking single-page route transitions accurately in PostHog under React StrictMode without double-counting the initial page load.",
+            "solution": "Disabled PostHog auto-pageview capture and centralized route tracking inside PostHogPageTracker with effect cleanup guards so each route transition records a single $pageview."
           }
         ],
         "features": [
-          "Fully Dynamic UI driven by JSON.",
-          "Multilingual support (Arabic/English) with RTL/LTR handling.",
-          "Integrated Google Analytics 4 (GA4) for user behavior tracking.",
-          "Advanced Form handling with React Hook Form and EmailJS.",
-          "Performance-optimized with lazy loading and asset compression."
+          "Data-driven project case studies powered by structured JSON.",
+          "Instant Arabic (RTL) and English (LTR) switching with bundled i18next translations.",
+          "PostHog event and route pageview tracking for projects, demos, social links, and CV views.",
+          "Lazy-loaded contact delivery with React Hook Form and dynamic EmailJS loading.",
+          "Code-split Vite build with WebP media, React Compiler, and optimized starfield canvas."
         ]
       },
       "ar": {
         "title": "معرض الأعمال الشخصي",
-        "short_description": "بورتفوليو احترافي يعتمد على البيانات، يدعم لغات متعددة مع تحسينات متقدمة للأداء وتحليل سلوك المستخدمين.",
-        "full_description": "مشروع متكامل لعرض المهارات والخبرات التقنية، يركز على الأداء العالي، ومعمارية الكود النظيفة عبر فصل البيانات عن المنطق البرمجي، وتقديم تجربة مستخدم سلسة تدعم لغات متعددة.",
+        "short_description": "بورتفوليو ثنائي اللغة عالي الأداء يدعم تحليلات PostHog وعرض تفاصيل المشاريع والوضعين الداكن والفاتح.",
+        "full_description": "بورتفوليو شخصي مصمم لعرض المهارات والمشاريع في تطوير الويب المتكامل (Full-Stack). يركز على سرعة التحميل عبر تقسيم الكود (Code Splitting) وضغط الصور إلى WebP، وتضمين الترجمة العربية والإنجليزية مع ضبط RTL/LTR تلقائيًا، إلى جانب تحليلات التفاعل عبر PostHog.",
         "challenges": [
           {
-            "title": "أتمتة البيانات (Data-Driven)",
-            "problem": "تجنب كتابة المحتوى داخل الكود مباشرة لتسهيل عملية التحديث والتوسيع مستقبلاً.",
-            "solution": "بناء هيكل برمجي يعتمد بالكامل على ملف JSON خارجي، مما يجعل إضافة أي مشروع جديد تتم في ثوانٍ دون المساس بالكود الأساسي."
+            "title": "بنية تعتمد على البيانات ودعم اللغتين",
+            "problem": "الحفاظ على تناسق بيانات المشاريع والترجمة واتجاهات RTL/LTR دون تكرار في الكود أو وميض المفاتيح عند التحميل.",
+            "solution": "فصل بيانات المشاريع في ملف JSON منظم مع تضمين ملفات الترجمة في i18next مباشرة ومزامنة lang وdir على مستوى html."
           },
           {
-            "title": "تحدي اللغات المتعددة",
-            "problem": "تقديم تجربة مستخدم ممتازة باللغتين العربية (RTL) والإنجليزية (LTR) مع الحفاظ على سلامة التصميم.",
-            "solution": "استخدام مكتبة i18next مع توظيف خصائص Tailwind CSS لضبط الاتجاهات والتخطيط بشكل تلقائي وسلس."
+            "title": "تحسين الأداء وحجم الحزمة",
+            "problem": "الأصول غير المضغوطة وحزمة JavaScript الواحدة الكبيرة كانت تؤثر على سرعة التحميل واستهلاك المعالج.",
+            "solution": "تحويل الصور إلى WebP، وتفعيل تقسيم المسارات بـ React.lazy وmanualChunks وReact Compiler، مع تحسين خلفية النجوم لمراعاة دقة الشاشة وحالة التبويب."
           },
           {
-            "title": "تحسين الأداء وتجربة المستخدم",
-            "problem": "ضمان سرعة الموقع رغم وجود فيديوهات وصور، وتجنب القفزات المفاجئة في التصميم أثناء التحميل.",
-            "solution": "استخدام useMemo لتقليل عمليات إعادة الرندرة، ضغط الملفات الوسائطية، وإضافة Skeleton Loaders لتحسين تجربة المستخدم أثناء انتظار تحميل البيانات."
+            "title": "دقة تتبع الزيارات في تطبيق SPA",
+            "problem": "تجنب تكرار تسجيل $pageview عند تحميل الصفحة لأول مرة أو عند التنقل بين المسارات مع تفعيل React StrictMode.",
+            "solution": "إيقاف التتبع التلقائي في PostHog وحصر إرسال $pageview داخل PostHogPageTracker مع حراسة الـ cleanup بحيث تُسجّل كل زيارة مرة واحدة فقط."
           }
         ],
         "features": [
-          "واجهة مستخدم ديناميكية بالكامل تعتمد على ملفات JSON.",
-          "دعم كامل للغتين العربية والإنجليزية مع ضبط اتجاهات التصميم.",
-          "دمج Google Analytics 4 لتتبع تفاعل الزوار بشكل دقيق.",
-          "نظام نماذج متطور باستخدام React Hook Form والربط مع EmailJS.",
-          "تحسينات تقنية للأداء تشمل ضغط الصور والتحميل الذكي."
+          "عرض ديناميكي لتفاصيل المشاريع باللغتين عبر ملف JSON منظم.",
+          "دعم فوري للعربية (RTL) والإنجليزية (LTR) بدون طلبات شبكة إضافية للترجمة.",
+          "تكامل PostHog Analytics لتتبع زيارات الصفحات والنقر على المشاريع والسيرة الذاتية وروابط التواصل.",
+          "نموذج تواصل متطور بـ React Hook Form وتحميل ديناميكي لـ EmailJS عند الإرسال.",
+          "تحسينات أداء شاملة تشمل Code Splitting وWebP وReact Compiler وخلفية Canvas ذكية."
         ]
       }
     }
