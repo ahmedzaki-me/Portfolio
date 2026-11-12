@@ -11,24 +11,27 @@ import ScrollProvider from "./context/ScrollProvider.jsx";
 import posthog from "posthog-js";
 import { PostHogProvider } from "@posthog/react";
 
-posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_TOKEN, {
-  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
-  defaults: "2026-01-30",
-  capture_pageview: false,
-  person_profiles: "always",
-  persistence: "localStorage",
-});
+const posthogToken = import.meta.env.VITE_PUBLIC_POSTHOG_TOKEN;
+if (posthogToken) {
+  posthog.init(posthogToken, {
+    api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+    defaults: "2026-01-30",
+    capture_pageview: false,
+    person_profiles: "always",
+    persistence: "localStorage",
+  });
+}
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
-  <PostHogProvider client={posthog}>
-    <BrowserRouter>
-      <ModeProvider>
-        <ScrollProvider>
-          <App />
-        </ScrollProvider>
-      </ModeProvider>
-    </BrowserRouter>
-  </PostHogProvider>,
-  // </StrictMode>,
+  <StrictMode>
+    <PostHogProvider client={posthog}>
+      <BrowserRouter>
+        <ModeProvider>
+          <ScrollProvider>
+            <App />
+          </ScrollProvider>
+        </ModeProvider>
+      </BrowserRouter>
+    </PostHogProvider>
+  </StrictMode>,
 );
