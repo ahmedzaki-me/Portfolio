@@ -1,14 +1,12 @@
 import ProjectCard from "./ProjectCard";
 import JsonProjects from "../data/projects.json";
 import { useTranslation } from "react-i18next";
+import { getCurrentLang } from "../i18n";
 
-export default function Projects() {
+export default function Projects({ headingAs = "h2" }) {
   const { t, i18n } = useTranslation();
-
-  const currentLang = (i18n.resolvedLanguage || i18n.language || "en").slice(
-    0,
-    2,
-  );
+  const currentLang = getCurrentLang(i18n);
+  const Heading = headingAs;
 
   const translatedProjects = JsonProjects.map((project) => ({
     ...project,
@@ -16,10 +14,10 @@ export default function Projects() {
   }));
 
   return (
-    <section className="container my-section">
-      <h2 className="mb-8 text-3xl md:text-6xl font-black uppercase tracking-tighter leading-none font-oswald text-shadow-lg/30 text-text">
+    <section className="container my-section-mobile md:my-section">
+      <Heading className="mb-8 text-3xl md:text-6xl font-black uppercase tracking-tighter leading-none text-shadow-lg/30 text-text">
         {t("Featured Projects")}
-      </h2>
+      </Heading>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {translatedProjects.map((project) => (

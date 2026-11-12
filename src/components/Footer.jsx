@@ -17,7 +17,7 @@ export default function Footer() {
                 dir="ltr"
                 href="tel:+201286113602"
                 target="_blank"
-                className="underline! text-main font-bold decoration-main/30 underline-offset-4 hover:decoration--main transition-colors"
+                className="underline! text-main font-bold decoration-main/30 underline-offset-4 hover:decoration-main transition-colors whitespace-nowrap"
               >
                 {t("+20 1286113602")}
               </a>
@@ -27,7 +27,7 @@ export default function Footer() {
               {t("Email")}: <br className="max-lg:hidden" />
               <a
                 href="mailto:ahmedzaki.developer@gmail.com"
-                className="underline! text-main font-bold decoration-main/30 underline-offset-4 hover:decoration--main transition-colors"
+                className="underline! text-main font-bold decoration-main/30 underline-offset-4 hover:decoration-main transition-colors"
                 target="_blank"
               >
                 ahmedzaki.developer@gmail.com
@@ -44,7 +44,7 @@ export default function Footer() {
           <hr className="text-[#333] light:text-[#aaa]" />
 
           <div className="pt-5 text-center">
-            Made With Love By:
+            {t("Engineered By:")}
             <span className="bg-linear-to-r from-main to-main bg-clip-text text-transparent font-bold text-xl">
               {" "}
               Ahmed Zaki{" "}

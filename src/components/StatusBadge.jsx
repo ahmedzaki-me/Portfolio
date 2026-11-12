@@ -14,7 +14,7 @@ const StatusBadge = () => {
   }, []);
 
   return (
-    <div className="text-2xl absolute bottom-8 -left-6.5 w-15 h-15 bg-main rounded-full flex items-center justify-center text-header font-bold shadow-lg z-9 overflow-hidden">
+    <div className="text-2xl absolute bottom-8 -left-6.5 w-15 h-15 bg-main rounded-full flex items-center justify-center text-white font-bold shadow-lg z-9 overflow-hidden">
       <span
         className={`absolute transition-all duration-700 ease-in-out ${
           showHi ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"

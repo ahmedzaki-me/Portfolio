@@ -21,8 +21,8 @@ export default function DownloadCV() {
         <span>{t("View My CV")}</span>
         <MdRemoveRedEye />
       </a>
-      <p className="text-xs text-gray-500 font-medium ">
-        Opens in a new tab • PDF
+      <p className="text-xs text-text/60 font-medium mt-1">
+        {t("Opens in a new tab • PDF")}
       </p>
     </div>
   );

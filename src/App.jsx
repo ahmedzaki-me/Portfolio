@@ -1,49 +1,45 @@
+import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import SpaceBackground from "./components/BG";
-import ProjectDetails from "./pages/ProjectDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
-import ProjectsPage from "./pages/ProjectsPage";
-import ZakiChat from "./components/ZakiChat.js";
+import ZakiChat from "./components/ZakiChat.jsx";
 import useMode from "./hooks/useMode.js";
-
 import { PostHogPageTracker } from "./PostHogPageTracker.jsx";
-import { usePostHog } from "@posthog/react";
+
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
+
+function RouteFallback() {
+  return (
+    <div
+      className="min-h-[60vh] flex items-center justify-center"
+      role="status"
+      aria-label="Loading"
+    >
+      <span className="h-9 w-9 rounded-full border-3 border-main border-t-transparent animate-spin" />
+    </div>
+  );
+}
+
+function StatusPage({ title, children }) {
+  useEffect(() => {
+    document.title = `${title} | Ahmed Zaki`;
+  }, [title]);
+
+  return (
+    <section className="min-h-[60vh] flex flex-col items-center justify-center px-4 py-24 text-2xl text-text text-center">
+      <h1 className="font-bold leading-relaxed">{children}</h1>
+    </section>
+  );
+}
 
 function App() {
   const { mode } = useMode();
-  const style = "flex justify-center my-100 text-2xl text-text text-center";
-
-  const posthog = usePostHog();
-
-  useEffect(() => {
-    if (!posthog) return;
-
-    const setupGeoTracking = async () => {
-      try {
-        const res = await fetch("/api/geo");
-        const data = await res.json();
-
-        if (data.city) {
-          posthog.register({
-            visitor_city: data.city,
-            visitor_governorate: data.region,
-            visitor_country: data.country,
-          });
-        }
-
-        posthog.capture("$pageview");
-      } catch (e) {
-        console.error("Geo fetching failed", e);
-        posthog.capture("$pageview");
-      }
-    };
-
-    setupGeoTracking();
-  }, [posthog]);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -54,28 +50,37 @@ function App() {
         <ZakiChat />
         {mode === "dark" && <SpaceBackground />}
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/projects/:slug" element={<ProjectDetails />} />
+        <main className="flex-1">
+          <Suspense fallback={<RouteFallback />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:slug" element={<ProjectDetails />} />
 
-          <Route
-            path="/blogs/"
-            element={<h2 className={style}>Coming Soon...</h2>}
-          />
+              <Route
+                path="/blogs/"
+                element={
+                  <StatusPage title={t("Blogs")}>
+                    {t("Coming Soon...")}
+                  </StatusPage>
+                }
+              />
 
-          <Route
-            path="*"
-            element={
-              <h2 className={style}>
-                Error 404 <br /> Page Not Found
-              </h2>
-            }
-          />
-        </Routes>
+              <Route
+                path="*"
+                element={
+                  <StatusPage title={`${t("Error 404")} - ${t("Page Not Found")}`}>
+                    {t("Error 404")} <br /> {t("Page Not Found")}
+                  </StatusPage>
+                }
+              />
+            </Routes>
+          </Suspense>
+        </main>
         <Footer />
       </div>
     </>
   );
 }
+
 export default App;

@@ -12,6 +12,7 @@ export default function ProjectCard({
 }) {
   const { t } = useTranslation();
   const posthog = usePostHog();
+  const thumbnailSrc = img?.startsWith("/") ? img : `/${img}`;
 
   return (
     <article
@@ -35,9 +36,12 @@ export default function ProjectCard({
       >
         <div className="relative aspect-[1278/862] overflow-hidden bg-bg">
           <img
-            src={img}
+            src={thumbnailSrc}
             alt={title}
+            width={1278}
+            height={862}
             loading="lazy"
+            decoding="async"
             className="
               h-full w-full object-contain
               transition-transform duration-500

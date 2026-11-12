@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { IoIosArrowDown } from "react-icons/io";
-import emailjs from "@emailjs/browser";
 import MainImg from "./MainImg";
 import { useScrollToRef } from "../hooks/useScrollToRef";
 import { useTranslation } from "react-i18next";
@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 export default function Contact() {
   const { t } = useTranslation();
   const sectionRef = useScrollToRef("contact");
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const inputStyle =
     "bg-card-bg text-text py-3 px-4 rounded-3xl border-none focus:ring-2 focus:ring-main outline-none placeholder:text-gray-500 transition-all shadow-inner";
@@ -26,29 +27,44 @@ export default function Contact() {
   });
 
   const onSubmit = async (data) => {
+    setSubmitStatus(null);
     try {
+      const { default: emailjs } = await import("@emailjs/browser");
+      const serviceId =
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_8b1zgch";
+      const templateId =
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_147xfri";
+      const publicKey =
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "sgyMxdo8u6AFEgcuz";
+
       await emailjs.send(
-        "service_8b1zgch",
-        "template_147xfri",
+        serviceId,
+        templateId,
         {
           name: data.name,
           email: data.email,
           title: data.service,
           message: data.message,
         },
-        "sgyMxdo8u6AFEgcuz",
+        publicKey,
       );
 
-      alert("شكراً لك! تم إرسال رسالتك بنجاح.");
+      setSubmitStatus({
+        type: "success",
+        message: t("Thank you! Your message has been sent successfully."),
+      });
       reset();
     } catch (error) {
-      console.error("خطأ في الإرسال:", error);
-      alert("للأسف حصلت مشكلة، حاول مرة تانية.");
+      console.error("EmailJS send failed:", error);
+      setSubmitStatus({
+        type: "error",
+        message: t("Something went wrong. Please try again."),
+      });
     }
   };
 
   return (
-    <section className="container py-section md:py-section flex items-center justify-center lg:flex-row flex-col gap-13 transition-colors duration-300">
+    <section className="container py-section-mobile md:py-section flex items-center justify-center lg:flex-row flex-col gap-13 transition-colors duration-300">
       <MainImg />
       <div
         className="scroll-mt-40 max-w-4xl flex flex-col gap-6"
@@ -69,6 +85,7 @@ export default function Contact() {
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="w-full max-w-2xl flex flex-col gap-6"
+          noValidate
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
@@ -79,11 +96,12 @@ export default function Contact() {
                 {t("Name")}
               </label>
               <input
-                {...register("name", { required: "Name is required" })}
+                {...register("name", { required: t("Name is required") })}
                 placeholder="Ahmed Zaki"
                 className={inputStyle}
                 autoComplete="name"
                 id="contact-name"
+                aria-invalid={Boolean(errors.name)}
               />
               {errors.name && (
                 <span className="text-red-500 text-sm italic">
@@ -101,16 +119,18 @@ export default function Contact() {
               </label>
               <input
                 {...register("email", {
-                  required: "Email is required",
+                  required: t("Email is required"),
                   pattern: {
-                    value: /^\S+@\S+$/i,
-                    message: "Invalid email address",
+                    value: /^\S+@\S+\.\S+$/i,
+                    message: t("Invalid email address"),
                   },
                 })}
+                type="email"
                 placeholder="ahmedzaki.developer@gmail.com"
                 className={inputStyle}
                 autoComplete="email"
                 id="contact-email"
+                aria-invalid={Boolean(errors.email)}
               />
               {errors.email && (
                 <span className="text-red-500 text-sm italic">
@@ -130,17 +150,20 @@ export default function Contact() {
             <div className="relative">
               <select
                 {...register("service", {
-                  required: "Please select a service",
+                  required: t("Please select a service"),
                 })}
                 className="w-full bg-card-bg text-text py-3 px-4 rounded-3xl border-none focus:ring-2 focus:ring-main outline-none appearance-none cursor-pointer shadow-inner"
                 autoComplete="off"
                 id="contact-service"
+                aria-invalid={Boolean(errors.service)}
               >
                 <option value="" disabled hidden>
                   {t("Select...")}
                 </option>
-                <option value="offer">{t("Offer")}</option>
-                <option value="web">{t("Web Development")}</option>
+                <option value="offer">{t("Job Offer")}</option>
+                <option value="fullstack">{t("Full-Stack Application")}</option>
+                <option value="backend">{t("Backend & APIs")}</option>
+                <option value="frontend">{t("Frontend Development")}</option>
               </select>
               <div className="absolute inset-y-0 end-4 flex items-center pointer-events-none text-gray-400">
                 <IoIosArrowDown className="w-5 h-5" />
@@ -161,12 +184,13 @@ export default function Contact() {
               {t("What Can I Help You?")}
             </label>
             <textarea
-              {...register("message", { required: "Message is required" })}
+              {...register("message", { required: t("Message is required") })}
               rows="6"
               placeholder={t("Hello, I'd like to enquire about...")}
               className="resize-y min-h-40 bg-card-bg text-text p-4 rounded-3xl border-none focus:ring-2 focus:ring-main outline-none placeholder:text-gray-500 transition-all shadow-inner"
               autoComplete="off"
               id="contact-message"
+              aria-invalid={Boolean(errors.message)}
             ></textarea>
             {errors.message && (
               <span className="text-red-500 text-sm italic">
@@ -174,6 +198,20 @@ export default function Contact() {
               </span>
             )}
           </div>
+
+          {submitStatus && (
+            <div
+              role={submitStatus.type === "error" ? "alert" : "status"}
+              aria-live="polite"
+              className={`rounded-2xl border px-4 py-3 text-sm font-medium ${
+                submitStatus.type === "success"
+                  ? "border-green-500/40 bg-green-500/10 text-green-400 light:text-green-700"
+                  : "border-red-500/40 bg-red-500/10 text-red-400 light:text-red-600"
+              }`}
+            >
+              {submitStatus.message}
+            </div>
+          )}
 
           <div className="mt-4">
             <button
@@ -183,12 +221,14 @@ export default function Contact() {
               w-full md:w-fit md:px-16 py-4 rounded-full font-bold text-xl uppercase tracking-widest transition-all duration-300 transform active:scale-95
               ${
                 isSubmitting
-                  ? "bg-gray-600 cursor-not-allowed opacity-70 "
-                  : "text-main border-main border-2 shadow-[0_10px_20px_rgba(0,0,0,0.2)]  cursor-pointer relative overflow-hidden before:content-[''] before:absolute before:left-0 before:top-0 hover:text-white before:h-full before:w-0 before:bg-main before:transition-all before:duration-300 before:-z-10 hover:before:w-full "
+                  ? "bg-gray-600 cursor-not-allowed opacity-70 text-white"
+                  : "text-main border-main border-2 shadow-[0_10px_20px_rgba(0,0,0,0.2)] cursor-pointer relative overflow-hidden before:content-[''] before:absolute before:left-0 before:top-0 hover:text-white before:h-full before:w-0 before:bg-main before:transition-all before:duration-300 before:z-0 hover:before:w-full"
               }
             `}
             >
-              {isSubmitting ? t("SUBMITTING...") : t("SUBMIT")}
+              <span className="relative z-10">
+                {isSubmitting ? t("SUBMITTING...") : t("SUBMIT")}
+              </span>
             </button>
           </div>
         </form>

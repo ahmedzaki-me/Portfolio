@@ -23,14 +23,6 @@
   --color-card-bg: #e2d7f8;
 }
 @custom-variant light (&:where(.light, .light *));
-.light * p {
-  transition: 0.3s;
-  color: #555;
-  font-weight: 500;
-}
-.light * p:hover {
-  color: #333;
-}
 
 @layer base {
   html {
@@ -39,10 +31,10 @@
   body {
     @apply relative p-0 m-0 bg-bg rtl:font-semibold overflow-x-hidden;
   }
-  body::before {
+  body.light::before {
     content: "";
-    background-image: url("/WhatsAppImage.jpeg");
-    @apply absolute bg-no-repeat bg-center bg-cover inset-0 -z-101 blur-xs;
+    background-image: url("/WhatsAppImage.webp");
+    @apply fixed bg-no-repeat bg-center bg-cover inset-0 -z-101 blur-xs pointer-events-none;
   }
 }
 
@@ -81,7 +73,7 @@ img {
     @apply mx-auto p-4 lg:p-8;
   }
   .header {
-    @apply lg:items-center mx-auto px-2 z-10 lg:w-127 w-69.5 h-14 flex justify-between py-2 gap-10 bg-header text-text rounded-4xl fixed top-3 left-1/2 -translate-x-1/2  transition-all duration-300 ease-in-out;
+    @apply lg:items-center mx-auto px-2 z-40 lg:w-127 w-69.5 h-14 flex justify-between py-2 gap-10 bg-header text-text rounded-4xl fixed top-3 left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out;
   }
   .nav-link {
     @apply hover:text-main duration-300 cursor-pointer font-medium;
@@ -121,12 +113,12 @@ img {
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--muted-foreground);
+    background: var(--color-main-alt);
     background-clip: content-box;
   }
 
   ::-webkit-scrollbar-thumb:active {
-    background: var(--primary);
+    background: var(--color-main-alt);
     background-clip: content-box;
   }
 
